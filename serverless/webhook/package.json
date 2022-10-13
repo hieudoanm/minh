@@ -31,8 +31,12 @@
   "dependencies": {
     "@hieudoanm/dotenv": "0.0.1",
     "@hieudoanm/express": "0.0.1",
+    "@hieudoanm/football": "0.0.1",
+    "@hieudoanm/forex": "0.0.1",
+    "@hieudoanm/news": "0.0.1",
     "@hieudoanm/pino": "0.0.1",
     "@hieudoanm/telegram": "0.0.1",
+    "@hieudoanm/utils": "0.0.1",
     "@hieudoanm/weather": "0.0.1"
   },
   "devDependencies": {

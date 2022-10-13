@@ -391,6 +391,27 @@
     morgan "1.10.0"
     tsoa "4.1.3"
 
+"@hieudoanm/football@0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@hieudoanm/football/0.0.1/51f009ada4c168d5a6eef873ec70b66c4e85d31a#51f009ada4c168d5a6eef873ec70b66c4e85d31a"
+  integrity sha512-X6FNpJ3TMbpSV1dGf752aPyqyB/UEwMaakVhNYJDtdWTHTQWL7/IlLQ/6rTOPv0AHLZ8aykUQsOO4MV3UTMG8w==
+  dependencies:
+    axios "1.1.2"
+
+"@hieudoanm/forex@0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@hieudoanm/forex/0.0.1/391576f60c76be98bae7f1f2c6f7ad3151f07e2b#391576f60c76be98bae7f1f2c6f7ad3151f07e2b"
+  integrity sha512-JhKYeykJNTVxceHmhkHw5v80zF8lWdiJRNY+R9KtX+Ckzf/l1CPz1PQXi/BgoSwlfYgTY8X0laNV7AnB4E7/fg==
+  dependencies:
+    axios "1.1.2"
+
+"@hieudoanm/news@^0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@hieudoanm/news/0.0.1/7d40098d74ed23f99581ac159e735036e80f0836#7d40098d74ed23f99581ac159e735036e80f0836"
+  integrity sha512-JM/CmrYs/eOvswkVxldvPehH/ia2ORnhImFZ5POydiMjmQWRUn1gjjge4s2q8kt3owtU0vDB6cn2XmGdsRZXqw==
+  dependencies:
+    axios "1.1.2"
+
 "@hieudoanm/pino@0.0.1":
   version "0.0.1"
   resolved "https://npm.pkg.github.com/download/@hieudoanm/pino/0.0.1/b2fcfc2aca62ec8b80fb5520d31896944dd2ce1b#b2fcfc2aca62ec8b80fb5520d31896944dd2ce1b"
@@ -405,6 +426,11 @@
   integrity sha512-mDVuygPklqFmMvmKbk5aw0OIJb0Ze/HmnH9Ctr1r5Uz2NchDUArQg+xWRIDglqtbKOrjJIG0a/LWXn1iY1rl4g==
   dependencies:
     axios "1.1.2"
+
+"@hieudoanm/utils@0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@hieudoanm/utils/0.0.1/ab4e7a3c0ab7ccbc5a89aed923cbfdeb8ec34844#ab4e7a3c0ab7ccbc5a89aed923cbfdeb8ec34844"
+  integrity sha512-MbnHoUqPme3JuN/Q7yECsEsnj3/S5bX6dn+tTBn4q4hEOvkAwgcgRVpfrl7vtjW+ENh2MgbzF6khfJlRWRpcXg==
 
 "@hieudoanm/weather@0.0.1":
   version "0.0.1"
@@ -1221,7 +1247,7 @@
     "@types/expect" "^1.20.4"
     "@types/node" "*"
 
-"@types/webpack-node-externals@^2.5.3":
+"@types/webpack-node-externals@2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@types/webpack-node-externals/-/webpack-node-externals-2.5.3.tgz#921783aadda1fe686db0a70e20e4b9548b5a3cef"
   integrity sha512-A9JxaR8QXoYT95egET4AmCFuChyTlP8d18ZAnmSHuIMsFdS7QlCQQ8pmN/+FHgLIkm+ViE/VngltT5avLACY9A==
@@ -9046,7 +9072,7 @@ webpack-merge@^5.7.3:
     clone-deep "^4.0.1"
     wildcard "^2.0.0"
 
-webpack-node-externals@^3.0.0:
+webpack-node-externals@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/webpack-node-externals/-/webpack-node-externals-3.0.0.tgz#1a3407c158d547a9feb4229a9e3385b7b60c9917"
   integrity sha512-LnL6Z3GGDPht/AigwRh2dvL9PQPFQ8skEpVrWZXLWBYmqcaojHNN0onvHzie6rq7EWKrrBfPYqNEzTJgiwEQDQ==

@@ -1,11 +1,11 @@
 {
   "item": [
     {
-      "id": "afcde7eb-fa35-4a0e-b8e9-6cfe9d3cd5eb",
+      "id": "d0cc6707-7feb-4bf7-aeda-22f2e5fd2b51",
       "name": "api",
       "item": [
         {
-          "id": "a2f6360f-acd8-4fec-a97d-b9703f3b45b4",
+          "id": "398b2de2-d1eb-4e73-ad2c-3c79cd698a10",
           "name": "Get",
           "request": {
             "name": "Get",
@@ -27,7 +27,7 @@
           },
           "response": [
             {
-              "id": "c6da0030-1616-4d83-8fb4-7c7d1a9a4256",
+              "id": "d2631090-3b0d-448f-8f73-eef3849270f4",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -47,7 +47,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"status\": \"culpa commodo\"\n}",
+              "body": "{\n  \"status\": \"sit magna do\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -55,7 +55,7 @@
           "event": []
         },
         {
-          "id": "8f18ab06-c6f8-4db0-acfd-4dc35c3c8f0f",
+          "id": "d612655f-25c2-4d00-9226-00b82b11145b",
           "name": "Webhook",
           "request": {
             "name": "Webhook",
@@ -90,7 +90,7 @@
           },
           "response": [
             {
-              "id": "e7d3bde0-6246-4a9c-9771-9ab95a9c06b3",
+              "id": "a5e2460f-e6e5-4899-97c0-53d5b3fd18ea",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -118,7 +118,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"status\": \"culpa commodo\"\n}",
+              "body": "{\n  \"status\": \"sit magna do\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -141,7 +141,7 @@
     }
   ],
   "info": {
-    "_postman_id": "b2ec53ee-f2d4-4835-b0bb-e6b9b271b9ce",
+    "_postman_id": "f83ecf6c-9481-4d2a-ae94-78a274eed7e8",
     "name": "@chatbot/webhook",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {

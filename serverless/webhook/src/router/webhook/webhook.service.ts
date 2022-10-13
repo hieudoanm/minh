@@ -1,9 +1,21 @@
 import logger from '@hieudoanm/pino';
 import { telegramClient } from '../../libs/telegram';
-import { weatherClient } from '../../libs/weather';
+import { getNextMatchMessage } from '../../services/football.service';
+import { getForexMessage } from '../../services/forex.service';
+import {
+  getBlockchainCryptoNewsMessage,
+  getTopHeadlinesMessage,
+} from '../../services/news.service';
+import { getWeatherMessage } from '../../services/weather.service';
 import { WebhookRequestBody } from './webhook.types';
 
-const COMMANDS: string[] = ['weather'];
+const COMMANDS: string[] = [
+  'blockchain news',
+  'forex',
+  'liverpool',
+  'news',
+  'weather',
+].sort();
 
 export const processWebhookRequestBody = async (
   requestBody: WebhookRequestBody
@@ -17,22 +29,34 @@ export const processWebhookRequestBody = async (
   } = requestBody;
   const chatId: string = id.toString();
   const lowerCaseText = text.toLowerCase().trim();
-  if (COMMANDS.includes(lowerCaseText)) {
-    if (lowerCaseText === 'weather') {
-      const message = await getWeatherMessage();
-      await telegramClient.sendMessage(chatId, message);
-    }
-  } else {
-    await telegramClient.sendMessage(chatId, 'N/A');
-  }
+
+  const message: string = await processMessage(lowerCaseText);
+  await telegramClient.sendMessage(chatId, message);
 };
 
-const getWeatherMessage = async () => {
-  const weather = await weatherClient.getWeather('ho chi minh city');
-  const city = weather.name || '';
-  const mainWeather: string = weather.weather[0].main || '';
-  const description: string = weather.weather[0].description || '';
-  const temp: number = weather.main.temp || 0;
-  const feelsLike: number = weather.main.feels_like || 0;
-  return `${city}\n${mainWeather} (${description})\n${temp}°C - ${feelsLike}°C`;
+const processMessage = async (message: string): Promise<string> => {
+  try {
+    if (COMMANDS.includes(message)) {
+      if (message === 'forex') {
+        return await getForexMessage();
+      } else if (message === 'weather') {
+        return await getWeatherMessage();
+      } else if (message === 'liverpool') {
+        return await getNextMatchMessage();
+      } else if (message === 'news') {
+        return await getTopHeadlinesMessage();
+      } else if (message === 'blockchain news') {
+        return await getBlockchainCryptoNewsMessage();
+      } else {
+        return 'N/A';
+      }
+    } else if (message === 'help') {
+      return COMMANDS.map((command: string) => `- \`${command}\``).join('\n');
+    } else {
+      return 'N/A';
+    }
+  } catch (error) {
+    logger.error('Error', error);
+    return 'Error';
+  }
 };
