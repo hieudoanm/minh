@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "afcde7eb-fa35-4a0e-b8e9-6cfe9d3cd5eb",
+      "name": "api",
+      "item": [
+        {
+          "id": "a2f6360f-acd8-4fec-a97d-b9703f3b45b4",
+          "name": "Get",
+          "request": {
+            "name": "Get",
+            "description": {},
+            "url": {
+              "path": ["api", "health"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6da0030-1616-4d83-8fb4-7c7d1a9a4256",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": ["api", "health"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"culpa commodo\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "8f18ab06-c6f8-4db0-acfd-4dc35c3c8f0f",
+          "name": "Webhook",
+          "request": {
+            "name": "Webhook",
+            "description": {},
+            "url": {
+              "path": ["api", "webhook"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": {\n    \"text\": \"<string>\",\n    \"date\": \"<double>\",\n    \"chat\": {\n      \"type\": \"<string>\",\n      \"username\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"from\": {\n      \"language_code\": \"<string>\",\n      \"username\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"is_bot\": \"<boolean>\",\n      \"id\": \"<double>\"\n    },\n    \"message_id\": \"<double>\"\n  },\n  \"update_id\": \"<double>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7d3bde0-6246-4a9c-9771-9ab95a9c06b3",
+              "name": "Ok",
+              "originalRequest": {
+                "url": {
+                  "path": ["api", "webhook"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"message\": {\n    \"text\": \"<string>\",\n    \"date\": \"<double>\",\n    \"chat\": {\n      \"type\": \"<string>\",\n      \"username\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"id\": \"<double>\"\n    },\n    \"from\": {\n      \"language_code\": \"<string>\",\n      \"username\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"is_bot\": \"<boolean>\",\n      \"id\": \"<double>\"\n    },\n    \"message_id\": \"<double>\"\n  },\n  \"update_id\": \"<double>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"culpa commodo\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b2ec53ee-f2d4-4835-b0bb-e6b9b271b9ce",
+    "name": "@chatbot/webhook",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Webhook\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
