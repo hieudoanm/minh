@@ -7488,7 +7488,7 @@ rechoir@^0.7.0:
   dependencies:
     resolve "^1.9.0"
 
-redoc-cli@^0.13.20:
+redoc-cli@0.13.20:
   version "0.13.20"
   resolved "https://registry.yarnpkg.com/redoc-cli/-/redoc-cli-0.13.20.tgz#66a238f8dd6b6509e5475df81dddaa75ed9d1465"
   integrity sha512-mmaJFyaAS+kzh2GwX7pi1x4K/zbQynJFv9S4mp3Ra5Rw611XxKjWmuVF3ccPV+TAGEe0rU3fYkMuOQg1pA8RWw==
