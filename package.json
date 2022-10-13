@@ -13,6 +13,7 @@
     "yarn": "1"
   },
   "scripts": {
+    "build:webhook": "yarn workspace @chatbot/webhook build",
     "dev:webhook": "yarn workspace @chatbot/webhook dev",
     "lint:webhook": "yarn workspace @chatbot/webhook lint",
     "start:webhook": "yarn workspace @chatbot/webhook start",
