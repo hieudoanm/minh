@@ -60,7 +60,7 @@
     "webpack-cli": "4.10.0"
   },
   "resolutions": {
-    "ejs": "3.1.7",
+    "ejs": "3.1.8",
     "glob-parent": "6.0.2",
     "got": "11.8.5"
   }
