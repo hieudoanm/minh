@@ -2,7 +2,6 @@
   "name": "@chatbot/webhook",
   "version": "1.0.0",
   "description": "Webhook",
-  "main": "dist/index.js",
   "repository": "git@github.com:hieudoanm/chatbot.git",
   "author": "hieudoanm <hieumdoan@gmail.com>",
   "license": "MIT",
