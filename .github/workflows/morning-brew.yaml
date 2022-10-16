@@ -18,18 +18,7 @@ jobs:
         os:
           - name: Ubuntu
             version: ubuntu-latest
-        project:
-          - name: Forex
-            working-directory: ./jobs/forex
-          - name: Liverpool
-            working-directory: ./jobs/liverpool
-          - name: News
-            working-directory: ./jobs/news
-          - name: VNINDEX
-            working-directory: ./jobs/vnindex
-          - name: Weather
-            working-directory: ./jobs/weather
-    name: ${{ matrix.os.name }} - ${{ matrix.node.name }} - ${{ matrix.project.name }}
+    name: ${{ matrix.os.name }} - ${{ matrix.node.name }}
     runs-on: ${{ matrix.os.version }}
     steps:
       - name: Checkout
