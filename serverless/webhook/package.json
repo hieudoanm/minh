@@ -23,12 +23,17 @@
     "docs:swagger:json": "tsoa spec-and-routes",
     "docs:swagger:yaml": "json2yaml ./docs/swagger.json > ./docs/swagger.yaml",
     "docs:swagger:html": "redoc-cli build ./docs/swagger.json --output ./public/index.html --title \"Proxy as a Service\"",
+    "job:message:forex": "ts-node ./scripts/telegram/messages/send-forex.ts",
+    "job:message:liverpool": "ts-node ./scripts/telegram/messages/send-liverpool.ts",
+    "job:message:news": "ts-node ./scripts/telegram/messages/send-news.ts",
+    "job:message:weather": "ts-node ./scripts/telegram/messages/send-weather.ts",
     "lint": "eslint . --fix --ext .ts",
     "start": "node .",
     "test": "jest",
     "watch": "webpack --watch"
   },
   "dependencies": {
+    "@hieudoanm/air-visual": "^0.0.1",
     "@hieudoanm/dotenv": "0.0.1",
     "@hieudoanm/express": "0.0.1",
     "@hieudoanm/football": "0.0.1",

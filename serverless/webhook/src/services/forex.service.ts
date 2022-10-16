@@ -1,3 +1,4 @@
+import logger from '@hieudoanm/pino';
 import { addZero, vndFormatter } from '@hieudoanm/utils';
 import { forexClient } from '../libs/forex';
 
@@ -16,7 +17,12 @@ const PERSONAL_CURRENCIES: string[] = [
 ];
 
 export const getForexMessage = async (): Promise<string> => {
-  const { base, rates } = await forexClient.getLatest();
+  const response = await forexClient.getLatest();
+  logger.info('getForexMessage() base and rates', { response });
+  const { base = '', rates = {} } = response;
+  logger.info('getForexMessage() base and rates', { base, rates });
+  if (base !== '' || Object.keys(rates).length === 0) return '';
+
   const codes: string[] = Object.keys(rates);
   const personalCodes = codes.filter((key) =>
     PERSONAL_CURRENCIES.includes(key)

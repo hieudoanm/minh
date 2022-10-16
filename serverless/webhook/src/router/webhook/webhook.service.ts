@@ -1,6 +1,7 @@
 import logger from '@hieudoanm/pino';
 import { telegramClient } from '../../libs/telegram';
-import { getNextMatchMessage } from '../../services/football.service';
+import { getAirVisualMessage } from '../../services/air-visual.service';
+import { getMatchesMessage } from '../../services/football.service';
 import { getForexMessage } from '../../services/forex.service';
 import {
   getBlockchainCryptoNewsMessage,
@@ -40,9 +41,11 @@ const processMessage = async (message: string): Promise<string> => {
       if (message === 'forex') {
         return await getForexMessage();
       } else if (message === 'weather') {
-        return await getWeatherMessage();
+        const airVisualMessage = await getAirVisualMessage();
+        const weatherMessage = await getWeatherMessage();
+        return `${weatherMessage}\n${airVisualMessage}`;
       } else if (message === 'liverpool') {
-        return await getNextMatchMessage();
+        return await getMatchesMessage();
       } else if (message === 'news') {
         return await getTopHeadlinesMessage();
       } else if (message === 'blockchain news') {

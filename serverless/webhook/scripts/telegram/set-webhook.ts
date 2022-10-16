@@ -15,4 +15,4 @@ const main = async () => {
   logger.info('webhookInfo', { webhookInfo });
 };
 
-main().catch((error) => console.error(error));
+main().catch((error) => logger.error('Error', error));

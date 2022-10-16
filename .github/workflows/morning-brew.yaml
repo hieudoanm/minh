@@ -1,0 +1,69 @@
+name: Morning Brew
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  github-actions:
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - name: Node.js 16
+            version: 16.x
+        os:
+          - name: Ubuntu
+            version: ubuntu-latest
+        project:
+          - name: Forex
+            working-directory: ./jobs/forex
+          - name: Liverpool
+            working-directory: ./jobs/liverpool
+          - name: News
+            working-directory: ./jobs/news
+          - name: VNINDEX
+            working-directory: ./jobs/vnindex
+          - name: Weather
+            working-directory: ./jobs/weather
+    name: ${{ matrix.os.name }} - ${{ matrix.node.name }} - ${{ matrix.project.name }}
+    runs-on: ${{ matrix.os.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node.version }}
+      - name: TimeZone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Ho_Chi_Minh'
+      - name: Get Date & Time
+        id: datetime
+        run: |
+          echo $(date +'%Y-%m-%dT%H:%M:%S')
+      - name: Install Dependencies
+        run: yarn install --network-timeout 86400000
+        working-directory: ${{ matrix.project.working-directory }}
+        env:
+          NODE_TOKEN: ${{ secrets.NODE_TOKEN }}
+      - name: Run Job
+        working-directory: ./serverless/webhook
+        run: |
+          yarn job:message:forex
+          yarn job:message:liverpool
+          yarn job:message:news
+          yarn job:message:weather
+        env:
+          API_KEY_AIR_VISUAL: ${{ secrets.API_KEY_AIR_VISUAL }}
+          API_KEY_FIXER: ${{ secrets.API_KEY_FIXER }}
+          API_KEY_FOOTBALL_DATA: ${{ secrets.API_KEY_FOOTBALL_DATA }}
+          API_KEY_NEWS: ${{ secrets.API_KEY_NEWS }}
+          API_KEY_OPEN_WEATHER_MAP: ${{ secrets.API_KEY_OPEN_WEATHER_MAP }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          NODE_TOKEN: ${{ secrets.NODE_TOKEN }}
