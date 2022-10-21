@@ -1,0 +1,756 @@
+{
+  "components": {
+    "examples": {},
+    "headers": {},
+    "parameters": {},
+    "requestBodies": {},
+    "responses": {},
+    "schemas": {
+      "CoinsStats": {
+        "properties": {
+          "total24hVolume": {
+            "type": "string"
+          },
+          "totalMarketCap": {
+            "type": "string"
+          },
+          "totalExchanges": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalMarkets": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCoins": {
+            "type": "number",
+            "format": "double"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "total24hVolume",
+          "totalMarketCap",
+          "totalExchanges",
+          "totalMarkets",
+          "totalCoins",
+          "total"
+        ],
+        "type": "object"
+      },
+      "Coin": {
+        "properties": {
+          "btcPrice": {
+            "type": "string"
+          },
+          "coinrankingUrl": {
+            "type": "string"
+          },
+          "lowVolume": {
+            "type": "boolean"
+          },
+          "sparkline": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "rank": {
+            "type": "number",
+            "format": "double"
+          },
+          "change": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "number",
+            "format": "double"
+          },
+          "listedAt": {
+            "type": "number",
+            "format": "double"
+          },
+          "price": {
+            "type": "string"
+          },
+          "marketCap": {
+            "type": "string"
+          },
+          "iconUrl": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "btcPrice",
+          "coinrankingUrl",
+          "lowVolume",
+          "sparkline",
+          "rank",
+          "change",
+          "tier",
+          "listedAt",
+          "price",
+          "marketCap",
+          "iconUrl",
+          "color",
+          "name",
+          "symbol",
+          "uuid"
+        ],
+        "type": "object"
+      },
+      "CoinsData": {
+        "properties": {
+          "coins": {
+            "items": {
+              "$ref": "#/components/schemas/Coin"
+            },
+            "type": "array"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/CoinsStats"
+          }
+        },
+        "required": ["coins", "stats"],
+        "type": "object"
+      },
+      "CoinsResponse": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CoinsData"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": ["data", "status"],
+        "type": "object"
+      },
+      "OrderBy": {
+        "enum": ["24hVolume", "change", "listedAt", "marketCap", "price"],
+        "type": "string"
+      },
+      "OrderDirection": {
+        "enum": ["asc", "desc"],
+        "type": "string"
+      },
+      "Tag": {
+        "enum": [
+          "dao",
+          "defi",
+          "dex",
+          "exchange",
+          "gaming",
+          "layer-1",
+          "layer-2",
+          "meme",
+          "metaverse",
+          "nft",
+          "privacy",
+          "stablecoin",
+          "staking",
+          "wrapped"
+        ],
+        "type": "string"
+      },
+      "TimePeriod": {
+        "enum": ["1h", "3h", "12h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"],
+        "type": "string"
+      },
+      "Tier": {
+        "enum": ["1", "2", "3"],
+        "type": "string"
+      },
+      "Record_string.number_": {
+        "properties": {},
+        "type": "object",
+        "description": "Construct a type with a set of properties K of type T"
+      },
+      "ForexResponse": {
+        "properties": {
+          "rates": {
+            "$ref": "#/components/schemas/Record_string.number_"
+          },
+          "date": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "number",
+            "format": "double"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": ["rates", "date", "base", "timestamp", "success"],
+        "type": "object"
+      },
+      "Category": {
+        "type": "string",
+        "enum": ["top", "personal"],
+        "nullable": true
+      },
+      "Status": {
+        "type": "string",
+        "enum": ["active", "inactive"]
+      },
+      "StatusResponse": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "service": {
+            "type": "string"
+          }
+        },
+        "required": ["status", "service"],
+        "type": "object"
+      },
+      "Record_Service.StatusResponse_": {
+        "properties": {
+          "atlassian": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "bitbucket": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "circleci": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "confluence": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "discord": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "github": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "hedera": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "jira-software": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "solana": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "trello": {
+            "$ref": "#/components/schemas/StatusResponse"
+          },
+          "vercel": {
+            "$ref": "#/components/schemas/StatusResponse"
+          }
+        },
+        "type": "object",
+        "description": "Construct a type with a set of properties K of type T"
+      },
+      "StatusesResponse": {
+        "$ref": "#/components/schemas/Record_Service.StatusResponse_"
+      },
+      "Service": {
+        "type": "string",
+        "enum": [
+          "atlassian",
+          "bitbucket",
+          "circleci",
+          "confluence",
+          "discord",
+          "github",
+          "hedera",
+          "jira-software",
+          "solana",
+          "trello",
+          "vercel"
+        ]
+      },
+      "StockCompany": {
+        "properties": {
+          "priceChangedThreeMonthsPercent": {
+            "type": "string"
+          },
+          "priceChangedOneMonthPercent": {
+            "type": "string"
+          },
+          "priceChangedFiveDayPercent": {
+            "type": "string"
+          },
+          "marketCap": {
+            "type": "string"
+          },
+          "issueShare": {
+            "type": "string"
+          },
+          "listedDate": {
+            "type": "string"
+          },
+          "subsector": {
+            "type": "string"
+          },
+          "sector": {
+            "type": "string"
+          },
+          "supersector": {
+            "type": "string"
+          },
+          "industry": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "market": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "priceChangedThreeMonthsPercent",
+          "priceChangedOneMonthPercent",
+          "priceChangedFiveDayPercent",
+          "marketCap",
+          "issueShare",
+          "listedDate",
+          "subsector",
+          "sector",
+          "supersector",
+          "industry",
+          "name",
+          "market",
+          "symbol"
+        ],
+        "type": "object"
+      },
+      "StockHistory": {
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "volume": {
+            "type": "string"
+          },
+          "close": {
+            "type": "string"
+          },
+          "low": {
+            "type": "string"
+          },
+          "high": {
+            "type": "string"
+          },
+          "open": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "timestamp",
+          "volume",
+          "close",
+          "low",
+          "high",
+          "open",
+          "symbol",
+          "date"
+        ],
+        "type": "object"
+      }
+    },
+    "securitySchemes": {}
+  },
+  "info": {
+    "title": "@chatbot/functions",
+    "version": "0.0.1",
+    "description": "Functions",
+    "license": {
+      "name": "MIT"
+    },
+    "contact": {
+      "name": "hieudoanm ",
+      "email": "hieumdoan@gmail.com"
+    }
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/crypto/coins": {
+      "get": {
+        "operationId": "GetCoins",
+        "responses": {
+          "200": {
+            "description": "List of Coins",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinsResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Crypto"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "orderBy",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/OrderBy"
+            }
+          },
+          {
+            "in": "query",
+            "name": "orderDirection",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/OrderDirection"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tags",
+            "required": false,
+            "schema": {
+              "default": ""
+            }
+          },
+          {
+            "in": "query",
+            "name": "timePeriod",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/TimePeriod"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tier",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Tier"
+            }
+          }
+        ]
+      }
+    },
+    "/api/forex/rates": {
+      "get": {
+        "operationId": "GetForex",
+        "responses": {
+          "200": {
+            "description": "List of Forex Rates",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ForexResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Forex"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Category"
+            }
+          }
+        ]
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["status"],
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Health"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/api/status": {
+      "get": {
+        "operationId": "GetStatuses",
+        "responses": {
+          "200": {
+            "description": "Status of All Services",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusesResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Status"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/api/status/{service}": {
+      "get": {
+        "operationId": "GetServiceStatus",
+        "responses": {
+          "200": {
+            "description": "Status of the Service",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "$ref": "#/components/schemas/Status"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["status", "name"],
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Status"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "service",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Service"
+            }
+          }
+        ]
+      }
+    },
+    "/api/vnindex/companies": {
+      "get": {
+        "operationId": "GetCompanies",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/StockCompany"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["VNINDEX"],
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/api/vnindex/history/{stockCode}": {
+      "get": {
+        "operationId": "GetHistory",
+        "responses": {
+          "200": {
+            "description": "Chart SVG",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/StockHistory"
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["VNINDEX"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stockCode",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "format": "double",
+              "type": "number"
+            }
+          }
+        ]
+      }
+    },
+    "/api/vnindex/history/{stockCode}/chart": {
+      "get": {
+        "operationId": "ChartifyHistory",
+        "responses": {
+          "200": {
+            "description": "Chart SVG"
+          }
+        },
+        "tags": ["VNINDEX"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stockCode",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "width",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "minValue",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maxValue",
+            "required": false,
+            "schema": {
+              "default": 200,
+              "format": "double",
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "strokeColor",
+            "required": false,
+            "schema": {
+              "default": "#0074d9",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "strokeWidth",
+            "required": false,
+            "schema": {
+              "default": 2,
+              "format": "double",
+              "type": "number"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header render default 1`] = `
+<div>
+  <div
+    class="px-8 py-4"
+  >
+    Header
+  </div>
+</div>
+`;
