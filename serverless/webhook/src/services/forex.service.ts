@@ -18,24 +18,26 @@ const PERSONAL_CURRENCIES: string[] = [
 
 export const getForexMessage = async (): Promise<string> => {
   const response = await frankfurterClient.getLatest();
-  logger.info('getForexMessage() base and rates', { response });
+  logger.info('getForexMessage() response', { response });
   const { base = '', rates = {} } = response;
   logger.info('getForexMessage() base and rates', { base, rates });
-  if (base !== '' || Object.keys(rates).length === 0) return '';
+  if (base === '' || Object.keys(rates).length === 0) return '';
 
   const codes: string[] = Object.keys(rates);
   const personalCodes = codes.filter((key) =>
     PERSONAL_CURRENCIES.includes(key)
   );
-  const filterRates: Record<string, number> = {};
+  const personalRates: Record<string, number> = {};
   for (const code of personalCodes) {
-    filterRates[code] = rates[code];
+    personalRates[code] = rates[code];
   }
-  return personalCodes
+  logger.info('getForexMessage() personal', { personalCodes, personalRates });
+
+  const message = personalCodes
     .map((code) => {
-      const codeRate = rates[code];
-      const baseRate = rates[base];
-      const eurRate = rates['EUR'];
+      const codeRate = rates[code] || 1;
+      const baseRate = rates[base] || 1;
+      const eurRate = rates['EUR'] || 1;
       const rate = (baseRate * eurRate) / codeRate;
       return { code, rate };
     })
@@ -44,4 +46,8 @@ export const getForexMessage = async (): Promise<string> => {
       return `\`${addZero(index + 1)}. ${code} - ${eurFormatter(rate)}\``;
     })
     .join('\n');
+
+  logger.info('getForexMessage() message', { message });
+
+  return message;
 };
