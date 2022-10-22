@@ -29,9 +29,8 @@ export const getHistory = async (
   const history: StockHistory[] = await axios.get<StockHistory[]>(
     `${TABLEBASE_URL}/json/vietnam/stock/history/${stockCode.toUpperCase()}.json`
   );
-  return history
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .slice(offset, limit);
+  history.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return history.slice(offset, limit);
 };
 
 export const chartifyHistory = async (
@@ -62,8 +61,8 @@ export const chartifyHistory = async (
   const history: StockHistory[] = await axios.get<StockHistory[]>(
     `${TABLEBASE_URL}/json/vietnam/stock/history/${stockCode.toUpperCase()}.json`
   );
+  history.sort((a, b) => (a.date < b.date ? 1 : -1));
   const data: number[] = history
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
     .map((value) => parseFloat(value.close))
     .slice(0, 20);
   logger.info('data', data);

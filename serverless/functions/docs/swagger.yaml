@@ -516,6 +516,13 @@ paths:
       responses:
         200:
           description: 'Chart SVG'
+          content:
+            application/json:
+              schema:
+                type: 'number'
+                enum:
+                  - null
+                nullable: true
       tags:
         - 'VNINDEX'
       security: []

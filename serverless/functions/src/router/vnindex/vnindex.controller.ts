@@ -48,7 +48,7 @@ export class VnindexController extends Controller {
     @Query('maxValue') maxValue = MAX_VALUE,
     @Query('strokeColor') strokeColor = STROKE_COLOR,
     @Query('strokeWidth') strokeWidth = STROKE_WIDTH
-  ): Promise<void> {
+  ): Promise<null> {
     const response: Response = request.res as Response;
     this.setStatus(200);
     this.setHeader('Content-Type', 'image/svg+xml');
@@ -61,6 +61,6 @@ export class VnindexController extends Controller {
       strokeWidth,
     });
     response.send(chart);
-    return;
+    return null;
   }
 }

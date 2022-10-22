@@ -1,11 +1,11 @@
 {
   "item": [
     {
-      "id": "82d6d3b0-1c8d-4e28-9462-207ed278c70d",
+      "id": "74e9d79a-f783-43f0-a476-48faf3e1050e",
       "name": "api",
       "item": [
         {
-          "id": "66974b66-4189-4100-bf53-8b3483c97fca",
+          "id": "4a0de0e4-ebed-48c4-b56e-98ab074ab3a5",
           "name": "Get Coins",
           "request": {
             "name": "Get Coins",
@@ -63,7 +63,7 @@
           },
           "response": [
             {
-              "id": "33b5f29d-780a-4f43-9d59-ae98cf2ecd02",
+              "id": "7a821d3c-9884-4676-a05c-4838f2d54967",
               "name": "List of Coins",
               "originalRequest": {
                 "url": {
@@ -112,7 +112,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"data\": {\n    \"coins\": [\n      {\n        \"btcPrice\": \"ut proident deserunt laborum id\",\n        \"coinrankingUrl\": \"officia\",\n        \"lowVolume\": false,\n        \"sparkline\": [\n          \"reprehen\",\n          \"labore ea magna\"\n        ],\n        \"rank\": -55469231.39163091,\n        \"change\": \"sint tempor nisi in\",\n        \"tier\": 95342626.40162262,\n        \"listedAt\": -76865903.62036231,\n        \"price\": \"nostrud ut esse\",\n        \"marketCap\": \"do\",\n        \"iconUrl\": \"elit\",\n        \"color\": \"qui in incididunt\",\n        \"name\": \"nisi ea non ut\",\n        \"symbol\": \"aliqua voluptate\",\n        \"uuid\": \"laboris magna dolor tempor\"\n      },\n      {\n        \"btcPrice\": \"reprehenderit\",\n        \"coinrankingUrl\": \"dolor sint\",\n        \"lowVolume\": true,\n        \"sparkline\": [\n          \"labore sint ex culpa\",\n          \"et eu\"\n        ],\n        \"rank\": -8731158.081813991,\n        \"change\": \"proident aute\",\n        \"tier\": 36186666.10581061,\n        \"listedAt\": 67441225.972581,\n        \"price\": \"ut ea dolor aliquip\",\n        \"marketCap\": \"incididunt ullamco\",\n        \"iconUrl\": \"id\",\n        \"color\": \"qui\",\n        \"name\": \"irure culpa\",\n        \"symbol\": \"Ut\",\n        \"uuid\": \"aute irure cupidatat\"\n      }\n    ],\n    \"stats\": {\n      \"total24hVolume\": \"laboris dolor magna eu voluptate\",\n      \"totalMarketCap\": \"est proident sit\",\n      \"totalExchanges\": 39681281.13422704,\n      \"totalMarkets\": 93566089.94812009,\n      \"totalCoins\": 86051295.41026604,\n      \"total\": 10314701.57605265\n    }\n  },\n  \"status\": \"laboris cillum non nostru\"\n}",
+              "body": "{\n  \"data\": {\n    \"coins\": [\n      {\n        \"btcPrice\": \"occaecat cupidatat\",\n        \"coinrankingUrl\": \"et consectetur adipisicing magna\",\n        \"lowVolume\": true,\n        \"sparkline\": [\n          \"fugiat reprehenderit deserunt veniam\",\n          \"pariatur quis voluptate est\"\n        ],\n        \"rank\": -65487786.81911065,\n        \"change\": \"in consectetur\",\n        \"tier\": -20889681.176314175,\n        \"listedAt\": 80513544.275471,\n        \"price\": \"ut in culpa consequat\",\n        \"marketCap\": \"nisi mollit\",\n        \"iconUrl\": \"cillum ex\",\n        \"color\": \"ad occaecat veniam ea\",\n        \"name\": \"\",\n        \"symbol\": \"Duis culpa quis Lorem\",\n        \"uuid\": \"laborum in nisi\"\n      },\n      {\n        \"btcPrice\": \"nisi aliqua\",\n        \"coinrankingUrl\": \"do in dolore tempor qui\",\n        \"lowVolume\": true,\n        \"sparkline\": [\n          \"ad aute cupidatat\",\n          \"Ut reprehenderit\"\n        ],\n        \"rank\": 83072405.25145155,\n        \"change\": \"sint ess\",\n        \"tier\": -62342254.549670264,\n        \"listedAt\": 5358901.307013437,\n        \"price\": \"dolor adipisicing\",\n        \"marketCap\": \"quis dolor occaecat\",\n        \"iconUrl\": \"culpa consectetu\",\n        \"color\": \"sint sed\",\n        \"name\": \"sit reprehenderit irure elit\",\n        \"symbol\": \"laborum Lorem cu\",\n        \"uuid\": \"eiusmod fug\"\n      }\n    ],\n    \"stats\": {\n      \"total24hVolume\": \"sed et ut\",\n      \"totalMarketCap\": \"ut officia\",\n      \"totalExchanges\": 7862626.278503805,\n      \"totalMarkets\": 85350598.12227699,\n      \"totalCoins\": -37237089.63733938,\n      \"total\": -34551206.789246924\n    }\n  },\n  \"status\": \"minim deserunt\"\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -120,7 +120,7 @@
           "event": []
         },
         {
-          "id": "fdbf1b63-5984-4658-ad7b-d073c78fd964",
+          "id": "bcd67467-5aa3-47fe-b729-f50eb839a9df",
           "name": "Get Forex",
           "request": {
             "name": "Get Forex",
@@ -148,7 +148,7 @@
           },
           "response": [
             {
-              "id": "93b7dbf8-23de-4799-8b7e-b4c2f2cfd055",
+              "id": "01b7683a-632e-4a4d-bebb-7bd4a4a1ae7d",
               "name": "List of Forex Rates",
               "originalRequest": {
                 "url": {
@@ -173,7 +173,7 @@
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"rates\": {},\n  \"date\": \"sed cillum occaecat irure exercitation\",\n  \"base\": \"fugiat aliqua dolore\",\n  \"timestamp\": -5242068.130138248,\n  \"success\": true\n}",
+              "body": "{\n  \"rates\": {},\n  \"date\": \"cupidatat in labore reprehenderit\",\n  \"base\": \"proident\",\n  \"timestamp\": 41466378.08279708,\n  \"success\": true\n}",
               "cookie": [],
               "_postman_previewlanguage": "json"
             }
@@ -181,7 +181,7 @@
           "event": []
         },
         {
-          "id": "efc25b23-2515-4a9a-a7d6-e5087c93d6c6",
+          "id": "5760502e-7d9d-4d59-b0b0-0b693fa35001",
           "name": "Get",
           "request": {
             "name": "Get",
@@ -203,7 +203,7 @@
           },
           "response": [
             {
-              "id": "5246955e-e879-4250-9a1d-a57a35fe5381",
+              "id": "f60be4b5-d4f8-4db3-8d2a-fd5e063124a8",
               "name": "Ok",
               "originalRequest": {
                 "url": {
@@ -231,11 +231,11 @@
           "event": []
         },
         {
-          "id": "b070abc4-5ab1-42d5-98bf-00694d9f234d",
+          "id": "4954e523-f65a-4fa3-aadb-f1a95f1c1983",
           "name": "status",
           "item": [
             {
-              "id": "e2cd599b-a672-4c03-bbcd-bd51285d83cc",
+              "id": "5c5a5d7d-dc30-4ce4-9033-49d009c42bec",
               "name": "Get Statuses",
               "request": {
                 "name": "Get Statuses",
@@ -257,7 +257,7 @@
               },
               "response": [
                 {
-                  "id": "8ffaa788-3b4e-4135-9fd3-5471d4fbc06d",
+                  "id": "6f34df7c-2207-4753-bef3-5dde56475220",
                   "name": "Status of All Services",
                   "originalRequest": {
                     "url": {
@@ -277,7 +277,7 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"atlassian\": {\n    \"status\": \"active\",\n    \"service\": \"in l\"\n  },\n  \"bitbucket\": {\n    \"status\": \"active\",\n    \"service\": \"eiusmod anim ad\"\n  },\n  \"circleci\": {\n    \"status\": \"inactive\",\n    \"service\": \"tempor elit amet ex\"\n  },\n  \"confluence\": {\n    \"status\": \"inactive\",\n    \"service\": \"exercitation sit anim in\"\n  },\n  \"discord\": {\n    \"status\": \"active\",\n    \"service\": \"ad nostrud\"\n  },\n  \"github\": {\n    \"status\": \"inactive\",\n    \"service\": \"ex amet ad\"\n  },\n  \"hedera\": {\n    \"status\": \"inactive\",\n    \"service\": \"ullamco in\"\n  },\n  \"jira-software\": {\n    \"status\": \"active\",\n    \"service\": \"mollit cillum in do Excepteur\"\n  },\n  \"solana\": {\n    \"status\": \"inactive\",\n    \"service\": \"pariatur Excepteur c\"\n  },\n  \"trello\": {\n    \"status\": \"active\",\n    \"service\": \"occaecat sint\"\n  },\n  \"vercel\": {\n    \"status\": \"inactive\",\n    \"service\": \"ullamco ad Lorem in\"\n  }\n}",
+                  "body": "{\n  \"atlassian\": {\n    \"status\": \"active\",\n    \"service\": \"anim velit sint voluptate\"\n  },\n  \"bitbucket\": {\n    \"status\": \"inactive\",\n    \"service\": \"dolore irure est\"\n  },\n  \"circleci\": {\n    \"status\": \"inactive\",\n    \"service\": \"aute eu\"\n  },\n  \"confluence\": {\n    \"status\": \"inactive\",\n    \"service\": \"ut tempor aliqua occaecat\"\n  },\n  \"discord\": {\n    \"status\": \"inactive\",\n    \"service\": \"nisi exercitation\"\n  },\n  \"github\": {\n    \"status\": \"inactive\",\n    \"service\": \"elit ad laborum\"\n  },\n  \"hedera\": {\n    \"status\": \"inactive\",\n    \"service\": \"magna pariatur aliqua ad culpa\"\n  },\n  \"jira-software\": {\n    \"status\": \"active\",\n    \"service\": \"sunt e\"\n  },\n  \"solana\": {\n    \"status\": \"inactive\",\n    \"service\": \"exercitation aliqua Lorem\"\n  },\n  \"trello\": {\n    \"status\": \"inactive\",\n    \"service\": \"ullamco commodo pariatur\"\n  },\n  \"vercel\": {\n    \"status\": \"inactive\",\n    \"service\": \"dolor\"\n  }\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -285,7 +285,7 @@
               "event": []
             },
             {
-              "id": "0d0106cc-c696-40b0-8b35-270d34cf3621",
+              "id": "6ea75752-c1ad-46f9-bb45-3a2134c191c0",
               "name": "Get Service Status",
               "request": {
                 "name": "Get Service Status",
@@ -315,7 +315,7 @@
               },
               "response": [
                 {
-                  "id": "ef631af7-f4c5-431d-a6be-2dab400d4233",
+                  "id": "c5566aa9-6c70-4ae8-b92f-0aa37c9de3ac",
                   "name": "Status of the Service",
                   "originalRequest": {
                     "url": {
@@ -343,7 +343,7 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"status\": \"inactive\",\n  \"name\": \"Ut ut dolor\"\n}",
+                  "body": "{\n  \"status\": \"active\",\n  \"name\": \"mollit voluptate\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -354,11 +354,11 @@
           "event": []
         },
         {
-          "id": "c2745eea-7de8-4bc8-82d0-e0a4843ca3b9",
+          "id": "9d29da49-1a74-4b9f-8ed7-dfb2422475b8",
           "name": "vnindex",
           "item": [
             {
-              "id": "e6fd6117-d2f5-477a-82d3-ec1c932d511b",
+              "id": "fb80f78f-d257-47b6-b44a-a3188199b3ab",
               "name": "Get Companies",
               "request": {
                 "name": "Get Companies",
@@ -380,7 +380,7 @@
               },
               "response": [
                 {
-                  "id": "ad5b60a7-a712-4ddd-98ca-a3bcb5e04756",
+                  "id": "da98e402-6d8f-4e8d-9002-5433b83ccc12",
                   "name": "Ok",
                   "originalRequest": {
                     "url": {
@@ -400,7 +400,7 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "[\n  {\n    \"priceChangedThreeMonthsPercent\": \"nisi\",\n    \"priceChangedOneMonthPercent\": \"Excepteur ipsum enim do\",\n    \"priceChangedFiveDayPercent\": \"quis eu nulla laboris\",\n    \"marketCap\": \"Ut mollit aliqua officia\",\n    \"issueShare\": \"sed ipsum laborum\",\n    \"listedDate\": \"e\",\n    \"subsector\": \"dolor quis fugiat\",\n    \"sector\": \"ullamco Excepteur quis veniam culpa\",\n    \"supersector\": \"in ea quis\",\n    \"industry\": \"id ipsum\",\n    \"name\": \"sit esse labore\",\n    \"market\": \"ex cillu\",\n    \"symbol\": \"fugiat est\"\n  },\n  {\n    \"priceChangedThreeMonthsPercent\": \"adipisicing\",\n    \"priceChangedOneMonthPercent\": \"cupidatat aliq\",\n    \"priceChangedFiveDayPercent\": \"dolor\",\n    \"marketCap\": \"irure pariatur tempor velit minim\",\n    \"issueShare\": \"laborum voluptate exercitation\",\n    \"listedDate\": \"ea proident veli\",\n    \"subsector\": \"aliqua fugiat ut do voluptate\",\n    \"sector\": \"Excepteur irure n\",\n    \"supersector\": \"consectetur id ea\",\n    \"industry\": \"cupidatat amet aliqua in\",\n    \"name\": \"commodo ve\",\n    \"market\": \"et amet in\",\n    \"symbol\": \"in\"\n  }\n]",
+                  "body": "[\n  {\n    \"priceChangedThreeMonthsPercent\": \"dolore irure minim\",\n    \"priceChangedOneMonthPercent\": \"pariatur non incididunt quis\",\n    \"priceChangedFiveDayPercent\": \"deserunt quis laborum\",\n    \"marketCap\": \"est Excepteur\",\n    \"issueShare\": \"in ut quis sit in\",\n    \"listedDate\": \"mollit ipsum sunt\",\n    \"subsector\": \"eiusmod non commodo reprehenderit amet\",\n    \"sector\": \"Excepteur cupidatat Duis est\",\n    \"supersector\": \"in tempor eu\",\n    \"industry\": \"dolor culpa reprehenderit irure\",\n    \"name\": \"enim pariatur\",\n    \"market\": \"ut elit aliquip sint\",\n    \"symbol\": \"sit in elit dolore laborum\"\n  },\n  {\n    \"priceChangedThreeMonthsPercent\": \"ut do laborum sunt in\",\n    \"priceChangedOneMonthPercent\": \"Lorem dolore officia proident\",\n    \"priceChangedFiveDayPercent\": \"exercitation laborum sunt\",\n    \"marketCap\": \"sint labore velit\",\n    \"issueShare\": \"incididunt tempor anim sit\",\n    \"listedDate\": \"ea molli\",\n    \"subsector\": \"do quis reprehenderit ullamco minim\",\n    \"sector\": \"in\",\n    \"supersector\": \"aliqua\",\n    \"industry\": \"irure\",\n    \"name\": \"proident culpa Duis eiusmod\",\n    \"market\": \"mollit in anim\",\n    \"symbol\": \"pariatur veniam proident\"\n  }\n]",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -408,11 +408,11 @@
               "event": []
             },
             {
-              "id": "804392fc-2a63-47be-82d8-98fd53ee2ecf",
+              "id": "edf15a8c-7f60-471f-9b77-c21790e7696c",
               "name": "history/{stock Code}",
               "item": [
                 {
-                  "id": "c5edea42-a69b-4a6b-8420-85acbcdb58e3",
+                  "id": "178f8e15-15fd-4304-a70d-42dcbf9fe616",
                   "name": "Get History",
                   "request": {
                     "name": "Get History",
@@ -453,7 +453,7 @@
                   },
                   "response": [
                     {
-                      "id": "898d718e-9975-4c63-aa6a-fa7f0c4d8535",
+                      "id": "2904c6c8-7784-4d19-90ff-c4bccf6968f9",
                       "name": "Chart SVG",
                       "originalRequest": {
                         "url": {
@@ -490,7 +490,7 @@
                           "value": "application/json"
                         }
                       ],
-                      "body": "[\n  {\n    \"timestamp\": \"cillum sit dolore culpa\",\n    \"volume\": \"irure quis\",\n    \"close\": \"est Lorem consectetur\",\n    \"low\": \"incididunt\",\n    \"high\": \"amet\",\n    \"open\": \"nulla et non est\",\n    \"symbol\": \"Lorem ea\",\n    \"date\": \"deserunt est irure esse in\"\n  },\n  {\n    \"timestamp\": \"labore\",\n    \"volume\": \"nisi eu \",\n    \"close\": \"do ipsum pariatur exercitation\",\n    \"low\": \"sed aliqua\",\n    \"high\": \"commodo voluptate in exercitation\",\n    \"open\": \"aute\",\n    \"symbol\": \"sunt ut\",\n    \"date\": \"minim ad mollit irure tempor\"\n  }\n]",
+                      "body": "[\n  {\n    \"timestamp\": \"ut \",\n    \"volume\": \"ut magna deserunt\",\n    \"close\": \"voluptate laborum\",\n    \"low\": \"Excepteur eu commodo qui\",\n    \"high\": \"Lorem velit Duis\",\n    \"open\": \"aliquip proident\",\n    \"symbol\": \"ut ex sunt\",\n    \"date\": \"enim eu proident\"\n  },\n  {\n    \"timestamp\": \"sint labore\",\n    \"volume\": \"Lorem mollit anim\",\n    \"close\": \"magna elit sint Excepteur\",\n    \"low\": \"nisi in Excepteur ut\",\n    \"high\": \"voluptate Ut\",\n    \"open\": \"adipisicing Ut ex\",\n    \"symbol\": \"quis minim occaecat veniam\",\n    \"date\": \"irure pariatur sed officia\"\n  }\n]",
                       "cookie": [],
                       "_postman_previewlanguage": "json"
                     }
@@ -498,7 +498,7 @@
                   "event": []
                 },
                 {
-                  "id": "a2ed0b4e-314b-45e6-b43b-9b750488c13c",
+                  "id": "60dbc586-a08d-40ee-84ae-140b24534f3f",
                   "name": "Chartify History",
                   "request": {
                     "name": "Chartify History",
@@ -554,12 +554,18 @@
                         }
                       ]
                     },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
                     "method": "GET",
                     "auth": null
                   },
                   "response": [
                     {
-                      "id": "f06decdd-72e5-4750-bb5a-dcf23a8400e1",
+                      "id": "f2377726-cfb2-40f8-bf14-81ca95f8d3f7",
                       "name": "Chart SVG",
                       "originalRequest": {
                         "url": {
@@ -615,12 +621,12 @@
                       "header": [
                         {
                           "key": "Content-Type",
-                          "value": "text/plain"
+                          "value": "application/json"
                         }
                       ],
-                      "body": "",
+                      "body": "null",
                       "cookie": [],
-                      "_postman_previewlanguage": "text"
+                      "_postman_previewlanguage": "json"
                     }
                   ],
                   "event": []
@@ -644,7 +650,7 @@
     }
   ],
   "info": {
-    "_postman_id": "20760df9-7495-40e1-b986-38709323f3bb",
+    "_postman_id": "c51c7dff-170f-477c-8369-af356b134964",
     "name": "@chatbot/functions",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
