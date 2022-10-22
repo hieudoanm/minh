@@ -1,41 +1,14 @@
 import axios from '@hieudoanm/axios';
 import logger from '@hieudoanm/pino';
 import { API_KEY_FIXER } from '../../environments';
+import { PERSONAL_CURRENCIES, TOP_CURRENCIES } from './forex.constants';
 import { ForexResponse } from './forex.types';
 
 export type Category = 'top' | 'personal' | null;
 
-const topCurrencies: string[] = [
-  'AUD',
-  'CAD',
-  'CHF',
-  'CNH',
-  'EUR',
-  'GBP',
-  'HKD',
-  'JPY',
-  'NZD',
-  'USD',
-  'VND',
-];
-
-const personalCurrencies: string[] = [
-  'AUD',
-  'CAD',
-  'CNH',
-  'EUR',
-  'GBP',
-  'JPY',
-  'KRW',
-  'SGD',
-  'THB',
-  'USD',
-  'VND',
-];
-
 const categoryCurrencies: Record<Exclude<Category, null>, string[]> = {
-  top: topCurrencies,
-  personal: personalCurrencies,
+  top: TOP_CURRENCIES,
+  personal: PERSONAL_CURRENCIES,
 };
 
 export const getForex = async (

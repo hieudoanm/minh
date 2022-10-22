@@ -1,4 +1,4 @@
-import { vndFormatter } from '@hieudoanm/utils';
+import { eurFormatter } from '@hieudoanm/utils';
 import { ForexRate } from '../../../types';
 import List from '../../atoms/List';
 
@@ -19,7 +19,7 @@ const Rates: React.FC<{ rates: ForexRate[] }> = ({ rates }) => {
                   {currency || 'N/A'}
                 </span>
               </div>
-              <div>{vndFormatter(rate)}</div>
+              <div>{eurFormatter(rate)}</div>
             </div>
           </List.Item>
         );

@@ -1,6 +1,5 @@
-import { ForexClient } from '@hieudoanm/forex';
-import { API_KEY_FIXER } from '../../environments';
+import { FrankfurterClient } from '@hieudoanm/frankfurter';
 
-export const forexClient = new ForexClient(API_KEY_FIXER);
+export const frankfurterClient = new FrankfurterClient();
 
-export default forexClient;
+export default frankfurterClient;

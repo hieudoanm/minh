@@ -17,7 +17,7 @@ const ForexRates: React.FC = () => {
   const { data, loading, error, refetch } = useAxios<ForexResponse>(url, {
     params,
   });
-  const [vndRates, setRates] = useState<ForexRate[]>([]);
+  const [eurRates, setRates] = useState<ForexRate[]>([]);
 
   useEffect(() => {
     const success: boolean = data?.success || false;
@@ -29,8 +29,8 @@ const ForexRates: React.FC = () => {
         .map((code) => {
           const codeRate = rates[code];
           const baseRate = rates[base];
-          const vndRate = rates['VND'];
-          const rate = (baseRate * vndRate) / codeRate;
+          const eurRate = rates['EUR'];
+          const rate = (baseRate * eurRate) / codeRate;
           const currency: string = currencies[code];
           return { code, currency, rate };
         })
@@ -88,7 +88,7 @@ const ForexRates: React.FC = () => {
       <List.Header>
         <div className="flex justify-between items-center">
           <h1 className="uppercase text-center text-2xl">
-            Rates ({vndRates.length})
+            Rates ({eurRates.length})
           </h1>
           <div className="flex gap-4">
             <FormControl size="small">
@@ -112,7 +112,7 @@ const ForexRates: React.FC = () => {
           </div>
         </div>
       </List.Header>
-      <Forex rates={vndRates} />
+      <Forex rates={eurRates} />
     </List>
   );
 };
