@@ -13,6 +13,7 @@ const APPS: App[] = [
   { id: 'crypto-coins', href: '/crypto/coins', name: 'Crypto Coins' },
   { id: 'forex-rates', href: '/forex/rates', name: 'Forex Rates' },
   { id: 'pomodoro', href: '/pomodoro', name: 'Pomodoro' },
+  { id: 'map', href: '/map', name: 'Map' },
   { id: 'md5', href: '/md5', name: 'MD5' },
   { id: 'status', href: '/status', name: 'Status' },
   { id: 'uuid', href: '/uuid', name: 'UUID' },
