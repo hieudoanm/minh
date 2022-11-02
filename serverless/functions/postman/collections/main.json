@@ -1,0 +1,734 @@
+{
+  "item": [
+    {
+      "id": "2d518c2b-73fe-4555-9905-a2df7192ac25",
+      "name": "api",
+      "item": [
+        {
+          "id": "704c58f3-8e2b-4186-abb0-ac13203ca98e",
+          "name": "crypto/coins",
+          "item": [
+            {
+              "id": "a68de035-d96c-460d-a103-2c52565b77b1",
+              "name": "Get Crypto Coins",
+              "request": {
+                "name": "Get Crypto Coins",
+                "description": {},
+                "url": {
+                  "path": ["api", "crypto", "coins"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "orderDirection",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "timePeriod",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tier",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "dd8410e5-c477-4d3a-96cf-4b4a5987b81e",
+                  "name": "List of Crypto Coins",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["api", "crypto", "coins"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [
+                        {
+                          "key": "offset",
+                          "value": "0"
+                        },
+                        {
+                          "key": "limit",
+                          "value": "100"
+                        },
+                        {
+                          "key": "orderBy",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "orderDirection",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "timePeriod",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "tier",
+                          "value": "<number>"
+                        },
+                        {
+                          "key": "tag",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"stats\": {\n      \"total\": 21448,\n      \"totalCoins\": 21448,\n      \"totalMarkets\": 30193,\n      \"totalExchanges\": 163,\n      \"totalMarketCap\": \"1047272654006\",\n      \"total24hVolume\": \"62896395294\"\n    },\n    \"coins\": [\n      {\n        \"uuid\": \"Qwsogvtv82FCd\",\n        \"symbol\": \"BTC\",\n        \"name\": \"Bitcoin\",\n        \"color\": \"#f7931A\",\n        \"iconUrl\": \"https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg\",\n        \"marketCap\": \"394614580885\",\n        \"price\": \"20557.232580148946\",\n        \"listedAt\": 1330214400,\n        \"tier\": 1,\n        \"change\": \"0.33\",\n        \"rank\": 1,\n        \"sparkline\": [\n          \"20519.28327355186\",\n          \"20506.46916708327\",\n          \"20459.848641306377\",\n          \"20503.75509648463\",\n          \"20589.52781292203\",\n          \"20596.035411180434\",\n          \"20584.813278603695\",\n          \"20566.850298373334\",\n          \"20628.075957837664\",\n          \"20586.160650720823\",\n          \"20573.748111911696\",\n          \"20502.195461514068\",\n          \"20451.091930369013\",\n          \"20439.442896950884\",\n          \"20469.430026175873\",\n          \"20446.27052466074\",\n          \"20417.397432534875\",\n          \"20456.95827045399\",\n          \"20455.466716769388\",\n          \"20481.07804586518\",\n          \"20465.824534122017\",\n          \"20469.92012352856\",\n          \"20463.35504333631\",\n          \"20490.255335347785\",\n          \"20532.29487550965\"\n        ],\n        \"lowVolume\": false,\n        \"coinrankingUrl\": \"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc\",\n        \"24hVolume\": \"25805689838\",\n        \"btcPrice\": \"1\"\n      }\n    ]\n  }\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            },
+            {
+              "id": "26a6926d-3bce-4395-aec1-221c044a9512",
+              "name": "Get Crypto Coin",
+              "request": {
+                "name": "Get Crypto Coin",
+                "description": {},
+                "url": {
+                  "path": ["api", "crypto", "coins", ":id"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "ea2797fe-9923-4541-bff0-f97ebe5aec25",
+                  "name": "Get Crypto Coin",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["api", "crypto", "coins", ":id"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "disabled": false,
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "id",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"data\": {\n    \"coin\": {\n      \"tags\": [\n        \"sunt id nisi\",\n        \"nostrud consequat occaecat ipsum\"\n      ],\n      \"listedAt\": -73352097.56007037,\n      \"lowVolume\": false,\n      \"tier\": -25683516.080813363,\n      \"coinrankingUrl\": \"veniam irure non\",\n      \"allTimeHigh\": {\n        \"timestamp\": -39215151.028208695,\n        \"price\": \"irure veniam in qui et\"\n      },\n      \"sparkline\": [\n        \"veniam qui do adipisicing\",\n        \"id amet magna laborum\"\n      ],\n      \"rank\": 90349928.81867817,\n      \"change\": \"incididunt ut irure\",\n      \"priceAt\": -92715365.33841407,\n      \"btcPrice\": \"fugiat\",\n      \"price\": \"magna ut Except\",\n      \"fullyDilutedMarketCap\": \"reprehenderit ad voluptate\",\n      \"marketCap\": \"in nisi tempor nostrud do\",\n      \"24hVolume\": \"sit do dolore sed ullamco\",\n      \"numberOfExchanges\": -2034269.1940244585,\n      \"numberOfMarkets\": -95691533.52413493,\n      \"supply\": {\n        \"circulating\": \"ex elit Excepteur\",\n        \"total\": \"officia sed voluptate\",\n        \"max\": \"ut tem\",\n        \"supplyAt\": -61291270.072063185,\n        \"confirmed\": false\n      },\n      \"links\": [\n        {\n          \"url\": \"dolore minim ve\",\n          \"type\": \"dolor eiusmod\",\n          \"name\": \"sint Excepteur id enim Ut\"\n        },\n        {\n          \"url\": \"ex\",\n          \"type\": \"ex officia exercitation tempor consectetur\",\n          \"name\": \"Ut ipsum tempor\"\n        }\n      ],\n      \"websiteUrl\": \"voluptate elit\",\n      \"iconUrl\": \"ut sit\",\n      \"color\": \"non a\",\n      \"description\": \"anim laborum voluptate mollit aute\",\n      \"name\": \"et ad minim ullamco\",\n      \"symbol\": \"nostrud veniam ex\",\n      \"uuid\": \"culpa magna fugiat sit\"\n    }\n  },\n  \"status\": \"consequat dolore deserunt commodo\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "84fbde6f-eca1-4c0a-9b88-9b939e58dd98",
+          "name": "Get Forex Rates",
+          "request": {
+            "name": "Get Forex Rates",
+            "description": {},
+            "url": {
+              "path": ["api", "forex", "rates"],
+              "host": ["{{baseUrl}}"],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a92bcd40-141a-42b1-8e9d-1a76cbdd0a05",
+              "name": "List of Forex Rates",
+              "originalRequest": {
+                "url": {
+                  "path": ["api", "forex", "rates"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rates\": {},\n  \"date\": \"Lorem velit esse sit\",\n  \"base\": \"elit voluptate\",\n  \"timestamp\": 82373414.23941547,\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "5db9a369-8c03-4b89-baab-c6862842c11f",
+          "name": "Get Health",
+          "request": {
+            "name": "Get Health",
+            "description": {},
+            "url": {
+              "path": ["api", "health"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3f94fed-c836-4c5b-be7f-f5df98a7c427",
+              "name": "Get Health of Service",
+              "originalRequest": {
+                "url": {
+                  "path": ["api", "health"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"healthy\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "1e000431-9624-4f09-b534-e60e5b5455e0",
+          "name": "status",
+          "item": [
+            {
+              "id": "7a9a8365-e255-47f7-81c6-cd3794fa54f9",
+              "name": "Get Service Statuses",
+              "request": {
+                "name": "Get Service Statuses",
+                "description": {},
+                "url": {
+                  "path": ["api", "status"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "d74f8c5c-811b-48c3-92e2-c5af906a9d12",
+                  "name": "Status of All External Services",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["api", "status"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"atlassian\": {\n    \"status\": \"active\",\n    \"service\": \"elit enim sunt sit\"\n  },\n  \"bitbucket\": {\n    \"status\": \"active\",\n    \"service\": \"laborum velit in\"\n  },\n  \"circleci\": {\n    \"status\": \"active\",\n    \"service\": \"dolor\"\n  },\n  \"confluence\": {\n    \"status\": \"inactive\",\n    \"service\": \"aute sunt occaecat sint\"\n  },\n  \"discord\": {\n    \"status\": \"inactive\",\n    \"service\": \"eiusmod quis anim mollit\"\n  },\n  \"github\": {\n    \"status\": \"inactive\",\n    \"service\": \"minim sint cupidatat tempor eu\"\n  },\n  \"hedera\": {\n    \"status\": \"active\",\n    \"service\": \"ipsum dolore Ut cillum in\"\n  },\n  \"jira-software\": {\n    \"status\": \"inactive\",\n    \"service\": \"commodo esse\"\n  },\n  \"solana\": {\n    \"status\": \"inactive\",\n    \"service\": \"ipsum cillum\"\n  },\n  \"trello\": {\n    \"status\": \"inactive\",\n    \"service\": \"ex laboris cupidatat\"\n  },\n  \"vercel\": {\n    \"status\": \"active\",\n    \"service\": \"proident elit cupidatat dolor sed\"\n  }\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            },
+            {
+              "id": "91191e0f-64bc-4e1b-9cba-707bab92586f",
+              "name": "Get Service Status",
+              "request": {
+                "name": "Get Service Status",
+                "description": {},
+                "url": {
+                  "path": ["api", "status", ":service"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "service",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "54828337-f5c2-4f07-9067-36a6fa370efa",
+                  "name": "Status of Single External Service",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["api", "status", ":service"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": [
+                        {
+                          "disabled": false,
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "service",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"status\": \"active\",\n  \"name\": \"nulla ullamco in pariatur\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "a44e13f6-53f1-448c-badf-b5b865876055",
+          "name": "vnindex",
+          "item": [
+            {
+              "id": "6077975d-8056-4d4e-a676-14b552b3ca91",
+              "name": "Get Companies",
+              "request": {
+                "name": "Get Companies",
+                "description": {},
+                "url": {
+                  "path": ["api", "vnindex", "companies"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "1a971701-98ea-40b6-91ce-f86ed49df868",
+                  "name": "List of Publicly Listed Companies",
+                  "originalRequest": {
+                    "url": {
+                      "path": ["api", "vnindex", "companies"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [],
+                      "variable": []
+                    },
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "[\n  {\n    \"priceChangedThreeMonthsPercent\": \"ut Ut mollit ex ad\",\n    \"priceChangedOneMonthPercent\": \"qui enim\",\n    \"priceChangedFiveDayPercent\": \"nulla in est Ut\",\n    \"marketCap\": \"ullamco mollit deserunt ipsum\",\n    \"issueShare\": \"in quis\",\n    \"listedDate\": \"exercitation esse\",\n    \"subsector\": \"mollit\",\n    \"sector\": \"exercitation dolore qui id\",\n    \"supersector\": \"minim enim\",\n    \"industry\": \"pariatur amet commodo enim\",\n    \"name\": \"dolor irure sit quis\",\n    \"market\": \"do\",\n    \"symbol\": \"esse et laborum\"\n  },\n  {\n    \"priceChangedThreeMonthsPercent\": \"nisi irure\",\n    \"priceChangedOneMonthPercent\": \"magna irure laborum\",\n    \"priceChangedFiveDayPercent\": \"et in\",\n    \"marketCap\": \"velit eiusmod\",\n    \"issueShare\": \"consequat mollit quis irure sint\",\n    \"listedDate\": \"culpa incididunt\",\n    \"subsector\": \"nisi velit ut\",\n    \"sector\": \"tempor occaecat dolor\",\n    \"supersector\": \"deserunt\",\n    \"industry\": \"ea esse adipisicing\",\n    \"name\": \"incididunt labore quis\",\n    \"market\": \"ut eu mollit\",\n    \"symbol\": \"et reprehenderit\"\n  }\n]",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            },
+            {
+              "id": "d3318504-5a75-4eff-82c1-b986535a9892",
+              "name": "history/{stock Code}",
+              "item": [
+                {
+                  "id": "abcf3a49-81e1-43a5-8263-38ccbd349cf8",
+                  "name": "Get History",
+                  "request": {
+                    "name": "Get History",
+                    "description": {},
+                    "url": {
+                      "path": ["api", "vnindex", "history", ":stockCode"],
+                      "host": ["{{baseUrl}}"],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "key": "offset",
+                          "value": "0"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "limit",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "disabled": false,
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "stockCode",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "29f4d8f7-9a5e-400d-9168-4d3ee0482fec",
+                      "name": "History of Stock",
+                      "originalRequest": {
+                        "url": {
+                          "path": ["api", "vnindex", "history", ":stockCode"],
+                          "host": ["{{baseUrl}}"],
+                          "query": [
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "limit",
+                              "value": "20"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "stockCode",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "body": "[\n  {\n    \"timestamp\": \"cupidatat veniam exercitation\",\n    \"volume\": \"culpa incididunt sunt veniam\",\n    \"close\": \"Duis occaecat irure\",\n    \"low\": \"non mollit dolor et laboris\",\n    \"high\": \"aute labore\",\n    \"open\": \"anim mollit est enim\",\n    \"symbol\": \"anim\",\n    \"date\": \"deserunt\"\n  },\n  {\n    \"timestamp\": \"eiusmod quis sit\",\n    \"volume\": \"pariatur i\",\n    \"close\": \"reprehenderit nostrud sunt sint qui\",\n    \"low\": \"labore\",\n    \"high\": \"do cillum magna anim\",\n    \"open\": \"pari\",\n    \"symbol\": \"eu laboris\",\n    \"date\": \"nis\"\n  }\n]",
+                      "cookie": [],
+                      "_postman_previewlanguage": "json"
+                    }
+                  ],
+                  "event": []
+                },
+                {
+                  "id": "e92af1cd-ec17-4953-9977-234401afbceb",
+                  "name": "Chartify History",
+                  "request": {
+                    "name": "Chartify History",
+                    "description": {},
+                    "url": {
+                      "path": [
+                        "api",
+                        "vnindex",
+                        "history",
+                        ":stockCode",
+                        "chart"
+                      ],
+                      "host": ["{{baseUrl}}"],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "key": "width",
+                          "value": "500"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "height",
+                          "value": "100"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "minValue",
+                          "value": "0"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "maxValue",
+                          "value": "200"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "strokeColor",
+                          "value": "#0074d9"
+                        },
+                        {
+                          "disabled": false,
+                          "key": "strokeWidth",
+                          "value": "2"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "disabled": false,
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "stockCode",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "473a4c5a-7431-4245-8395-fbdc17032960",
+                      "name": "Chart SVG",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "vnindex",
+                            "history",
+                            ":stockCode",
+                            "chart"
+                          ],
+                          "host": ["{{baseUrl}}"],
+                          "query": [
+                            {
+                              "key": "width",
+                              "value": "500"
+                            },
+                            {
+                              "key": "height",
+                              "value": "100"
+                            },
+                            {
+                              "key": "minValue",
+                              "value": "0"
+                            },
+                            {
+                              "key": "maxValue",
+                              "value": "200"
+                            },
+                            {
+                              "key": "strokeColor",
+                              "value": "#0074d9"
+                            },
+                            {
+                              "key": "strokeWidth",
+                              "value": "2"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "stockCode",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "body": "null",
+                      "cookie": [],
+                      "_postman_previewlanguage": "json"
+                    }
+                  ],
+                  "event": []
+                }
+              ],
+              "event": []
+            }
+          ],
+          "event": []
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ad233fe1-f0a3-4fd3-b48e-fe3efc1cc750",
+    "name": "@chatbot/functions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Functions\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

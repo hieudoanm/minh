@@ -1,0 +1,804 @@
+---
+components:
+  examples: {}
+  headers: {}
+  parameters: {}
+  requestBodies: {}
+  responses: {}
+  schemas:
+    CoinsStats:
+      properties:
+        total24hVolume:
+          type: 'string'
+        totalMarketCap:
+          type: 'string'
+        totalExchanges:
+          type: 'number'
+          format: 'double'
+        totalMarkets:
+          type: 'number'
+          format: 'double'
+        totalCoins:
+          type: 'number'
+          format: 'double'
+        total:
+          type: 'number'
+          format: 'double'
+      required:
+        - 'total24hVolume'
+        - 'totalMarketCap'
+        - 'totalExchanges'
+        - 'totalMarkets'
+        - 'totalCoins'
+        - 'total'
+      type: 'object'
+    Coin:
+      properties:
+        btcPrice:
+          type: 'string'
+        24hVolume:
+          type: 'string'
+        coinrankingUrl:
+          type: 'string'
+        lowVolume:
+          type: 'boolean'
+        sparkline:
+          items:
+            type: 'string'
+          type: 'array'
+        rank:
+          type: 'number'
+          format: 'double'
+        change:
+          type: 'string'
+        tier:
+          type: 'number'
+          format: 'double'
+        listedAt:
+          type: 'number'
+          format: 'double'
+        price:
+          type: 'string'
+        marketCap:
+          type: 'string'
+        iconUrl:
+          type: 'string'
+        color:
+          type: 'string'
+        name:
+          type: 'string'
+        symbol:
+          type: 'string'
+        uuid:
+          type: 'string'
+      required:
+        - 'btcPrice'
+        - '24hVolume'
+        - 'coinrankingUrl'
+        - 'lowVolume'
+        - 'sparkline'
+        - 'rank'
+        - 'change'
+        - 'tier'
+        - 'listedAt'
+        - 'price'
+        - 'marketCap'
+        - 'iconUrl'
+        - 'color'
+        - 'name'
+        - 'symbol'
+        - 'uuid'
+      type: 'object'
+    CoinsData:
+      properties:
+        coins:
+          items:
+            $ref: '#/components/schemas/Coin'
+          type: 'array'
+        stats:
+          $ref: '#/components/schemas/CoinsStats'
+      required:
+        - 'coins'
+        - 'stats'
+      type: 'object'
+    CoinsResponse:
+      properties:
+        data:
+          $ref: '#/components/schemas/CoinsData'
+        status:
+          type: 'string'
+      required:
+        - 'data'
+        - 'status'
+      type: 'object'
+    OrderBy:
+      type: 'string'
+      enum:
+        - '24hVolume'
+        - 'change'
+        - 'listedAt'
+        - 'marketCap'
+        - 'price'
+    OrderDirection:
+      type: 'string'
+      enum:
+        - 'asc'
+        - 'desc'
+    TimePeriod:
+      type: 'string'
+      enum:
+        - '1h'
+        - '3h'
+        - '12h'
+        - '24h'
+        - '7d'
+        - '30d'
+        - '3m'
+        - '1y'
+        - '3y'
+        - '5y'
+    Tier:
+      type: 'number'
+      enum:
+        - 1
+        - 2
+        - 3
+    Tag:
+      type: 'string'
+      enum:
+        - 'dao'
+        - 'defi'
+        - 'dex'
+        - 'exchange'
+        - 'gaming'
+        - 'layer-1'
+        - 'layer-2'
+        - 'meme'
+        - 'metaverse'
+        - 'nft'
+        - 'privacy'
+        - 'stablecoin'
+        - 'staking'
+        - 'wrapped'
+    Link:
+      properties:
+        url:
+          type: 'string'
+        type:
+          type: 'string'
+        name:
+          type: 'string'
+      required:
+        - 'url'
+        - 'type'
+        - 'name'
+      type: 'object'
+    CoinResponse:
+      properties:
+        data:
+          properties:
+            coin:
+              properties:
+                tags:
+                  items:
+                    type: 'string'
+                  type: 'array'
+                listedAt:
+                  type: 'number'
+                  format: 'double'
+                lowVolume:
+                  type: 'boolean'
+                tier:
+                  type: 'number'
+                  format: 'double'
+                coinrankingUrl:
+                  type: 'string'
+                allTimeHigh:
+                  properties:
+                    timestamp:
+                      type: 'number'
+                      format: 'double'
+                    price:
+                      type: 'string'
+                  required:
+                    - 'timestamp'
+                    - 'price'
+                  type: 'object'
+                sparkline:
+                  items:
+                    type: 'string'
+                  type: 'array'
+                rank:
+                  type: 'number'
+                  format: 'double'
+                change:
+                  type: 'string'
+                priceAt:
+                  type: 'number'
+                  format: 'double'
+                btcPrice:
+                  type: 'string'
+                price:
+                  type: 'string'
+                fullyDilutedMarketCap:
+                  type: 'string'
+                marketCap:
+                  type: 'string'
+                24hVolume:
+                  type: 'string'
+                numberOfExchanges:
+                  type: 'number'
+                  format: 'double'
+                numberOfMarkets:
+                  type: 'number'
+                  format: 'double'
+                supply:
+                  properties:
+                    circulating:
+                      type: 'string'
+                    total:
+                      type: 'string'
+                    max:
+                      type: 'string'
+                    supplyAt:
+                      type: 'number'
+                      format: 'double'
+                    confirmed:
+                      type: 'boolean'
+                  required:
+                    - 'circulating'
+                    - 'total'
+                    - 'max'
+                    - 'supplyAt'
+                    - 'confirmed'
+                  type: 'object'
+                links:
+                  items:
+                    $ref: '#/components/schemas/Link'
+                  type: 'array'
+                websiteUrl:
+                  type: 'string'
+                iconUrl:
+                  type: 'string'
+                color:
+                  type: 'string'
+                description:
+                  type: 'string'
+                name:
+                  type: 'string'
+                symbol:
+                  type: 'string'
+                uuid:
+                  type: 'string'
+              required:
+                - 'tags'
+                - 'listedAt'
+                - 'lowVolume'
+                - 'tier'
+                - 'coinrankingUrl'
+                - 'allTimeHigh'
+                - 'sparkline'
+                - 'rank'
+                - 'change'
+                - 'priceAt'
+                - 'btcPrice'
+                - 'price'
+                - 'fullyDilutedMarketCap'
+                - 'marketCap'
+                - '24hVolume'
+                - 'numberOfExchanges'
+                - 'numberOfMarkets'
+                - 'supply'
+                - 'links'
+                - 'websiteUrl'
+                - 'iconUrl'
+                - 'color'
+                - 'description'
+                - 'name'
+                - 'symbol'
+                - 'uuid'
+              type: 'object'
+          required:
+            - 'coin'
+          type: 'object'
+        status:
+          type: 'string'
+      required:
+        - 'data'
+        - 'status'
+      type: 'object'
+    Record_string.number_:
+      properties: {}
+      type: 'object'
+      description: 'Construct a type with a set of properties K of type T'
+    ForexResponse:
+      properties:
+        rates:
+          $ref: '#/components/schemas/Record_string.number_'
+        date:
+          type: 'string'
+        base:
+          type: 'string'
+        timestamp:
+          type: 'number'
+          format: 'double'
+        success:
+          type: 'boolean'
+      required:
+        - 'rates'
+        - 'date'
+        - 'base'
+        - 'timestamp'
+        - 'success'
+      type: 'object'
+    Category:
+      type: 'string'
+      enum:
+        - 'top'
+        - 'personal'
+      nullable: true
+    Status:
+      type: 'string'
+      enum:
+        - 'active'
+        - 'inactive'
+    StatusResponse:
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        service:
+          type: 'string'
+      required:
+        - 'status'
+        - 'service'
+      type: 'object'
+    Record_Service.StatusResponse_:
+      properties:
+        atlassian:
+          $ref: '#/components/schemas/StatusResponse'
+        bitbucket:
+          $ref: '#/components/schemas/StatusResponse'
+        circleci:
+          $ref: '#/components/schemas/StatusResponse'
+        confluence:
+          $ref: '#/components/schemas/StatusResponse'
+        discord:
+          $ref: '#/components/schemas/StatusResponse'
+        github:
+          $ref: '#/components/schemas/StatusResponse'
+        hedera:
+          $ref: '#/components/schemas/StatusResponse'
+        jira-software:
+          $ref: '#/components/schemas/StatusResponse'
+        solana:
+          $ref: '#/components/schemas/StatusResponse'
+        trello:
+          $ref: '#/components/schemas/StatusResponse'
+        vercel:
+          $ref: '#/components/schemas/StatusResponse'
+      type: 'object'
+      description: 'Construct a type with a set of properties K of type T'
+    StatusesResponse:
+      $ref: '#/components/schemas/Record_Service.StatusResponse_'
+    Service:
+      type: 'string'
+      enum:
+        - 'atlassian'
+        - 'bitbucket'
+        - 'circleci'
+        - 'confluence'
+        - 'discord'
+        - 'github'
+        - 'hedera'
+        - 'jira-software'
+        - 'solana'
+        - 'trello'
+        - 'vercel'
+    StockCompany:
+      properties:
+        priceChangedThreeMonthsPercent:
+          type: 'string'
+        priceChangedOneMonthPercent:
+          type: 'string'
+        priceChangedFiveDayPercent:
+          type: 'string'
+        marketCap:
+          type: 'string'
+        issueShare:
+          type: 'string'
+        listedDate:
+          type: 'string'
+        subsector:
+          type: 'string'
+        sector:
+          type: 'string'
+        supersector:
+          type: 'string'
+        industry:
+          type: 'string'
+        name:
+          type: 'string'
+        market:
+          type: 'string'
+        symbol:
+          type: 'string'
+      required:
+        - 'priceChangedThreeMonthsPercent'
+        - 'priceChangedOneMonthPercent'
+        - 'priceChangedFiveDayPercent'
+        - 'marketCap'
+        - 'issueShare'
+        - 'listedDate'
+        - 'subsector'
+        - 'sector'
+        - 'supersector'
+        - 'industry'
+        - 'name'
+        - 'market'
+        - 'symbol'
+      type: 'object'
+    StockHistory:
+      properties:
+        timestamp:
+          type: 'string'
+        volume:
+          type: 'string'
+        close:
+          type: 'string'
+        low:
+          type: 'string'
+        high:
+          type: 'string'
+        open:
+          type: 'string'
+        symbol:
+          type: 'string'
+        date:
+          type: 'string'
+      required:
+        - 'timestamp'
+        - 'volume'
+        - 'close'
+        - 'low'
+        - 'high'
+        - 'open'
+        - 'symbol'
+        - 'date'
+      type: 'object'
+  securitySchemes: {}
+info:
+  title: '@chatbot/functions'
+  version: '0.0.1'
+  description: 'Functions'
+  license:
+    name: 'MIT'
+  contact:
+    name: 'hieudoanm '
+    email: 'hieumdoan@gmail.com'
+openapi: '3.0.0'
+paths:
+  /api/crypto/coins:
+    get:
+      operationId: 'GetCryptoCoins'
+      responses:
+        200:
+          description: 'List of Crypto Coins'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoinsResponse'
+              examples:
+                Example 1:
+                  value:
+                    status: 'success'
+                    data:
+                      stats:
+                        total: 21448
+                        totalCoins: 21448
+                        totalMarkets: 30193
+                        totalExchanges: 163
+                        totalMarketCap: '1047272654006'
+                        total24hVolume: '62896395294'
+                      coins:
+                        - uuid: 'Qwsogvtv82FCd'
+                          symbol: 'BTC'
+                          name: 'Bitcoin'
+                          color: '#f7931A'
+                          iconUrl: 'https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg'
+                          marketCap: '394614580885'
+                          price: '20557.232580148946'
+                          listedAt: 1330214400
+                          tier: 1
+                          change: '0.33'
+                          rank: 1
+                          sparkline:
+                            - '20519.28327355186'
+                            - '20506.46916708327'
+                            - '20459.848641306377'
+                            - '20503.75509648463'
+                            - '20589.52781292203'
+                            - '20596.035411180434'
+                            - '20584.813278603695'
+                            - '20566.850298373334'
+                            - '20628.075957837664'
+                            - '20586.160650720823'
+                            - '20573.748111911696'
+                            - '20502.195461514068'
+                            - '20451.091930369013'
+                            - '20439.442896950884'
+                            - '20469.430026175873'
+                            - '20446.27052466074'
+                            - '20417.397432534875'
+                            - '20456.95827045399'
+                            - '20455.466716769388'
+                            - '20481.07804586518'
+                            - '20465.824534122017'
+                            - '20469.92012352856'
+                            - '20463.35504333631'
+                            - '20490.255335347785'
+                            - '20532.29487550965'
+                          lowVolume: false
+                          coinrankingUrl: 'https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc'
+                          24hVolume: '25805689838'
+                          btcPrice: '1'
+      tags:
+        - 'Crypto'
+      security: []
+      parameters:
+        - in: 'query'
+          name: 'offset'
+          required: false
+          schema:
+            default: 0
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'limit'
+          required: false
+          schema:
+            default: 100
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'orderBy'
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderBy'
+        - in: 'query'
+          name: 'orderDirection'
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderDirection'
+        - in: 'query'
+          name: 'timePeriod'
+          required: false
+          schema:
+            $ref: '#/components/schemas/TimePeriod'
+        - in: 'query'
+          name: 'tier'
+          required: false
+          schema:
+            $ref: '#/components/schemas/Tier'
+        - in: 'query'
+          name: 'tag'
+          required: false
+          schema:
+            $ref: '#/components/schemas/Tag'
+  /api/crypto/coins/{id}:
+    get:
+      operationId: 'GetCryptoCoin'
+      responses:
+        200:
+          description: 'Get Crypto Coin'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoinResponse'
+      tags:
+        - 'Crypto'
+      security: []
+      parameters:
+        - in: 'path'
+          name: 'id'
+          required: true
+          schema:
+            type: 'string'
+  /api/forex/rates:
+    get:
+      operationId: 'GetForexRates'
+      responses:
+        200:
+          description: 'List of Forex Rates'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForexResponse'
+      tags:
+        - 'Forex'
+      security: []
+      parameters:
+        - in: 'query'
+          name: 'category'
+          required: false
+          schema:
+            $ref: '#/components/schemas/Category'
+  /api/health:
+    get:
+      operationId: 'GetHealth'
+      responses:
+        200:
+          description: 'Get Health of Service'
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    type: 'string'
+                required:
+                  - 'status'
+                type: 'object'
+              examples:
+                Example 1:
+                  value:
+                    status: 'healthy'
+      tags:
+        - 'Health'
+      security: []
+      parameters: []
+  /api/status:
+    get:
+      operationId: 'GetServiceStatuses'
+      responses:
+        200:
+          description: 'Status of All External Services'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusesResponse'
+      tags:
+        - 'Status'
+      security: []
+      parameters: []
+  /api/status/{service}:
+    get:
+      operationId: 'GetServiceStatus'
+      responses:
+        200:
+          description: 'Status of Single External Service'
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: '#/components/schemas/Status'
+                  name:
+                    type: 'string'
+                required:
+                  - 'status'
+                  - 'name'
+                type: 'object'
+      tags:
+        - 'Status'
+      security: []
+      parameters:
+        - in: 'path'
+          name: 'service'
+          required: true
+          schema:
+            $ref: '#/components/schemas/Service'
+  /api/vnindex/companies:
+    get:
+      operationId: 'GetCompanies'
+      responses:
+        200:
+          description: 'List of Publicly Listed Companies'
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/StockCompany'
+                type: 'array'
+      tags:
+        - 'VNINDEX'
+      security: []
+      parameters: []
+  /api/vnindex/history/{stockCode}:
+    get:
+      operationId: 'GetHistory'
+      responses:
+        200:
+          description: 'History of Stock'
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/StockHistory'
+                type: 'array'
+      tags:
+        - 'VNINDEX'
+      security: []
+      parameters:
+        - in: 'path'
+          name: 'stockCode'
+          required: true
+          schema:
+            type: 'string'
+        - in: 'query'
+          name: 'offset'
+          required: false
+          schema:
+            default: 0
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'limit'
+          required: false
+          schema:
+            default: 20
+            format: 'double'
+            type: 'number'
+  /api/vnindex/history/{stockCode}/chart:
+    get:
+      operationId: 'ChartifyHistory'
+      responses:
+        200:
+          description: 'Chart SVG'
+          content:
+            application/json:
+              schema:
+                type: 'number'
+                enum:
+                  - null
+                nullable: true
+      tags:
+        - 'VNINDEX'
+      security: []
+      parameters:
+        - in: 'path'
+          name: 'stockCode'
+          required: true
+          schema:
+            type: 'string'
+        - in: 'query'
+          name: 'width'
+          required: false
+          schema:
+            default: 500
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'height'
+          required: false
+          schema:
+            default: 100
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'minValue'
+          required: false
+          schema:
+            default: 0
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'maxValue'
+          required: false
+          schema:
+            default: 200
+            format: 'double'
+            type: 'number'
+        - in: 'query'
+          name: 'strokeColor'
+          required: false
+          schema:
+            default: '#0074d9'
+            type: 'string'
+        - in: 'query'
+          name: 'strokeWidth'
+          required: false
+          schema:
+            default: 2
+            format: 'double'
+            type: 'number'
+servers:
+  - url: '/'

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rates render default 1`] = `
+<div>
+  <div
+    class="border rounded "
+  >
+    <div
+      class="px-8 py-4"
+    >
+      <h1
+        class="uppercase text-center text-2xl"
+      >
+        Forex
+      </h1>
+    </div>
+    <div
+      class="px-8 py-4 border-t "
+    >
+      <div
+        class="flex justify-between items-center"
+      >
+        <div>
+          <span>
+            <b>
+              ABC
+            </b>
+          </span>
+          <span
+            class="hidden sm:inline ml-1"
+          >
+             - 
+            abcdef
+          </span>
+        </div>
+        <div>
+          1₫
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
