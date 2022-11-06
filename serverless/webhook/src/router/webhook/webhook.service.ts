@@ -11,7 +11,7 @@ import {
 import { getWeatherMessage } from '../../services/weather.service';
 import { WebhookRequestBody } from './webhook.types';
 
-const COMMANDS: string[] = [
+const INTENTS: string[] = [
   'blockchain news',
   'forex',
   'liverpool',
@@ -39,7 +39,7 @@ export const processWebhookRequestBody = async (
 
 const processMessage = async (message: string): Promise<string> => {
   try {
-    if (COMMANDS.includes(message)) {
+    if (INTENTS.includes(message)) {
       if (message === 'forex') {
         return await getForexMessage();
       } else if (message === 'weather') {
@@ -58,7 +58,7 @@ const processMessage = async (message: string): Promise<string> => {
         return 'N/A';
       }
     } else if (message === 'help') {
-      return COMMANDS.map((command: string) => `- \`${command}\``).join('\n');
+      return INTENTS.map((intent: string) => `- \`${intent}\``).join('\n');
     } else {
       return 'N/A';
     }
