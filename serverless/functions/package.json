@@ -1,0 +1,16 @@
+{
+  "name": "@chatbot/functions",
+  "version": "0.0.1",
+  "description": "Functions",
+  "main": "main.go",
+  "repository": "git@github.com:hieudoanm/chatbot.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "docs": "docsify init public"
+  },
+  "devDependencies": {
+    "docsify-cli": "4.4.4"
+  }
+}

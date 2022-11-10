@@ -1,7 +1,7 @@
 {
-  "name": "@chatbot/functions",
+  "name": "@chatbot/apis",
   "version": "0.0.1",
-  "description": "Functions",
+  "description": "APIs",
   "main": "dist/server.js",
   "repository": "git@github.com:hieudoanm/chatbot.git",
   "author": "hieudoanm <hieumdoan@gmail.com>",
