@@ -248,7 +248,7 @@ type ServiceStatus struct {
 	Status bool   `json:"status"`
 }
 
-func getStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
 	writer.Header().Set("Content-Type", "application/json")
 	var serviceStatuses map[string]ServiceStatus = map[string]ServiceStatus{}
 	for _, service := range SERVICES {
@@ -257,7 +257,7 @@ func getStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter
 	json.NewEncoder(writer).Encode(serviceStatuses)
 }
 
-func getStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+func GetStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
 	writer.Header().Set("Content-Type", "application/json")
 	var service string = params.ByName("service")
 	var serviceStatus ServiceStatus = GetStatusByService(service)
@@ -387,8 +387,8 @@ func main() {
 	router.GET("/api/crypto/coins", GetCryptoCoins)
 	router.GET("/api/forex/rates", GetForexRates)
 	router.GET("/api/health", GetHealth)
-	router.GET("/api/status", getStatuses)
-	router.GET("/api/status/:service", getStatus)
+	router.GET("/api/status", GetStatuses)
+	router.GET("/api/status/:service", GetStatus)
 	router.GET("/api/vnindex/companies", GetVnindexCompanies)
 	router.GET("/api/vnindex/history/:symbol", GetVnindexHistory)
 	router.GET("/api/youtube/trending", GetYouTubeTrending)
