@@ -1,4 +1,4 @@
-package handler
+package main
 
 import (
 	"encoding/json"
@@ -84,7 +84,7 @@ var TimePeriod map[string]string = map[string]string{
 	"5y":  "5y",
 }
 
-func GetCryptoCoins(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetCryptoCoins(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	// Query Parameters
 	limit := GetQueryParameter(request, "limit", "100")
@@ -150,7 +150,7 @@ type RatesResponseBody struct {
 	Rates     map[string]float64 `json:"rates"`
 }
 
-func GetForexRates(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetForexRates(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	// HTTP Request
 	var url string = fmt.Sprintf(
@@ -181,7 +181,7 @@ type HealthResponse struct {
 	Status string `json:"status"`
 }
 
-func GetHealth(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetHealth(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	var healthResponse HealthResponse = HealthResponse{"healthy"}
 	json.NewEncoder(writer).Encode(healthResponse)
@@ -248,7 +248,7 @@ type ServiceStatus struct {
 	Status bool   `json:"status"`
 }
 
-func getStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func getStatuses(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	var serviceStatuses map[string]ServiceStatus = map[string]ServiceStatus{}
 	for _, service := range SERVICES {
@@ -257,12 +257,12 @@ func getStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter
 	json.NewEncoder(writer).Encode(serviceStatuses)
 }
 
-func getStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var service string = params.ByName("service")
-	var serviceStatus ServiceStatus = GetStatusByService(service)
-	json.NewEncoder(writer).Encode(serviceStatus)
-}
+// func getStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+// 	writer.Header().Set("Content-Type", "application/json")
+// 	var service string = params.ByName("service")
+// 	var serviceStatus ServiceStatus = GetStatusByService(service)
+// 	json.NewEncoder(writer).Encode(serviceStatus)
+// }
 
 func GetStatusByService(service string) ServiceStatus {
 	if !slices.Contains(SERVICES, service) {
@@ -308,7 +308,7 @@ type CompaniesResponseBody struct {
 	Name        string `json:"name"`
 }
 
-func GetVnindexCompanies(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetVnindexCompanies(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	// HTTP Request
 	var url string = fmt.Sprintf(
@@ -375,24 +375,24 @@ func GetVnindexHistory(writer http.ResponseWriter, request *http.Request, params
 	json.NewEncoder(writer).Encode(companiesResponseBody)
 }
 
-func GetYouTubeTrending(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetYouTubeTrending(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	var healthResponse HealthResponse = HealthResponse{"healthy"}
 	json.NewEncoder(writer).Encode(healthResponse)
 }
 
-func Handler() {
-	router := httprouter.New()
+func main() {
+	// router := httprouter.New()
 	// Router
-	router.GET("/api/crypto/coins", GetCryptoCoins)
-	router.GET("/api/forex/rates", GetForexRates)
-	router.GET("/api/health", GetHealth)
-	router.GET("/api/status", getStatuses)
-	router.GET("/api/status/:service", getStatus)
-	router.GET("/api/vnindex/companies", GetVnindexCompanies)
-	router.GET("/api/vnindex/history/:symbol", GetVnindexHistory)
-	router.GET("/api/youtube/trending", GetYouTubeTrending)
+	http.HandleFunc("/api/crypto/coins", GetCryptoCoins)
+	http.HandleFunc("/api/forex/rates", GetForexRates)
+	http.HandleFunc("/api/health", GetHealth)
+	http.HandleFunc("/api/status", getStatuses)
+	// router.GET("/api/status/:service", getStatus)
+	http.HandleFunc("/api/vnindex/companies", GetVnindexCompanies)
+	// router.GET("/api/vnindex/history/:symbol", GetVnindexHistory)
+	http.HandleFunc("/api/youtube/trending", GetYouTubeTrending)
 	// Start
 	log.Println("🚀 Server is listening on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
