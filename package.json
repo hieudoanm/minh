@@ -30,7 +30,7 @@
     "test:webhook": "yarn workspace @chatbot/webhook test"
   },
   "devDependencies": {
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "prettier": "2.7.1",
     "pretty-quick": "3.1.3"
   },
