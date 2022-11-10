@@ -2,29 +2,12 @@ package handler
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
-	"os"
-	"strings"
 
-	"github.com/julienschmidt/httprouter"
 	"golang.org/x/exp/slices"
 )
-
-var API_KEY_FIXER string = os.Getenv("API_KEY_FIXER")
-
-func GetQueryParameter(request *http.Request, key string, defaultValue string) string {
-	var value string = request.URL.Query().Get("limit")
-	if defaultValue == "" {
-		return value
-	}
-	if defaultValue != "" && value == "" {
-		return defaultValue
-	}
-	return value
-}
 
 var SERVICES []string = []string{
 	"atlassian",
@@ -87,12 +70,14 @@ type ServiceStatus struct {
 	Status bool   `json:"status"`
 }
 
-// func getStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-// 	writer.Header().Set("Content-Type", "application/json")
-// 	var service string = params.ByName("service")
-// 	var serviceStatus ServiceStatus = GetStatusByService(service)
-// 	json.NewEncoder(writer).Encode(serviceStatus)
-// }
+func GetStatuses(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "application/json")
+	var serviceStatuses map[string]ServiceStatus = map[string]ServiceStatus{}
+	for _, service := range SERVICES {
+		serviceStatuses[service] = GetStatusByService(service)
+	}
+	json.NewEncoder(writer).Encode(serviceStatuses)
+}
 
 func GetStatusByService(service string) ServiceStatus {
 	if !slices.Contains(SERVICES, service) {
@@ -123,53 +108,8 @@ func GetStatusByService(service string) ServiceStatus {
 	return ServiceStatus{Name: name, Status: status}
 }
 
-const TABLEBASE_URL = "https://raw.githubusercontent.com/hieudoanm/tablebase/master/json"
-
-type HistoryResponseBody struct {
-	Date      string `json:"date"`
-	Symbol    string `json:"symbol"`
-	Open      string `json:"open"`
-	High      string `json:"high"`
-	Low       string `json:"low"`
-	Close     string `json:"close"`
-	Volume    string `json:"volume"`
-	Timestamp string `json:"timestamp"`
-}
-
-func GetVnindexHistory(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var symbol string = params.ByName("symbol")
-	// HTTP Request
-	var url string = fmt.Sprintf(
-		"%s/vietnam/stock/history/%s.json",
-		TABLEBASE_URL,
-		strings.ToUpper(symbol),
-	)
-	response, httpGetError := http.Get(url)
-	if httpGetError != nil {
-		log.Println("Fail to GetVnindexHistory", httpGetError)
-	}
-	defer response.Body.Close()
-	// Get Body
-	body, readBodyError := io.ReadAll(response.Body)
-	if readBodyError != nil {
-		log.Println("Fail to GetVnindexHistory", readBodyError)
-	}
-	// Parse JSON
-	var companiesResponseBody []HistoryResponseBody
-	jsonUnmarshalError := json.Unmarshal(body, &companiesResponseBody)
-	if jsonUnmarshalError != nil {
-		log.Println("Fail to GetVnindexHistory", jsonUnmarshalError)
-	}
-
-	json.NewEncoder(writer).Encode(companiesResponseBody)
-}
-
 func Handler() {
-	// Router
-	// router.GET("/api/status/:service", getStatus)
-	// router.GET("/api/vnindex/history/:symbol", GetVnindexHistory)
-	// Start
+	http.HandleFunc("/", GetStatuses)
 	log.Println("🚀 Server is listening on port 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
