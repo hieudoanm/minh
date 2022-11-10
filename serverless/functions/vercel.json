@@ -1,9 +1,7 @@
 {
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [{ "key": "access-control-allow-origin", "value": "*" }]
+  "build": {
+    "env": {
+      "GO_BUILD_FLAGS": "-ldflags '-s -w'"
     }
-  ],
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+  }
 }
