@@ -181,7 +181,7 @@ type HealthResponse struct {
 	Status string `json:"status"`
 }
 
-func GetHeath(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
+func GetHealth(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
 	writer.Header().Set("Content-Type", "application/json")
 	var healthResponse HealthResponse = HealthResponse{"healthy"}
 	json.NewEncoder(writer).Encode(healthResponse)
@@ -386,7 +386,7 @@ func main() {
 	// Router
 	router.GET("/api/crypto/coins", GetCryptoCoins)
 	router.GET("/api/forex/rates", GetForexRates)
-	router.GET("/api/health", GetHeath)
+	router.GET("/api/health", GetHealth)
 	router.GET("/api/status", getStatuses)
 	router.GET("/api/status/:service", getStatus)
 	router.GET("/api/vnindex/companies", GetVnindexCompanies)
