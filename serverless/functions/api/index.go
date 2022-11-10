@@ -381,7 +381,7 @@ func GetYouTubeTrending(writer http.ResponseWriter, request *http.Request, _ htt
 	json.NewEncoder(writer).Encode(healthResponse)
 }
 
-func main() {
+func Handler() {
 	router := httprouter.New()
 	// Router
 	router.GET("/api/crypto/coins", GetCryptoCoins)
