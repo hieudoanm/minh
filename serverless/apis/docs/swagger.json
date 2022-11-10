@@ -371,95 +371,9 @@
         "required": ["data", "status"],
         "type": "object"
       },
-      "Record_string.number_": {
-        "properties": {},
-        "type": "object",
-        "description": "Construct a type with a set of properties K of type T"
-      },
-      "ForexResponse": {
-        "properties": {
-          "rates": {
-            "$ref": "#/components/schemas/Record_string.number_"
-          },
-          "date": {
-            "type": "string"
-          },
-          "base": {
-            "type": "string"
-          },
-          "timestamp": {
-            "type": "number",
-            "format": "double"
-          },
-          "success": {
-            "type": "boolean"
-          }
-        },
-        "required": ["rates", "date", "base", "timestamp", "success"],
-        "type": "object"
-      },
-      "Category": {
-        "type": "string",
-        "enum": ["top", "personal"],
-        "nullable": true
-      },
       "Status": {
         "type": "string",
         "enum": ["active", "inactive"]
-      },
-      "StatusResponse": {
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/Status"
-          },
-          "service": {
-            "type": "string"
-          }
-        },
-        "required": ["status", "service"],
-        "type": "object"
-      },
-      "Record_Service.StatusResponse_": {
-        "properties": {
-          "atlassian": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "bitbucket": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "circleci": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "confluence": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "discord": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "github": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "hedera": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "jira-software": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "solana": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "trello": {
-            "$ref": "#/components/schemas/StatusResponse"
-          },
-          "vercel": {
-            "$ref": "#/components/schemas/StatusResponse"
-          }
-        },
-        "type": "object",
-        "description": "Construct a type with a set of properties K of type T"
-      },
-      "StatusesResponse": {
-        "$ref": "#/components/schemas/Record_Service.StatusResponse_"
       },
       "Service": {
         "type": "string",
@@ -476,65 +390,6 @@
           "trello",
           "vercel"
         ]
-      },
-      "StockCompany": {
-        "properties": {
-          "priceChangedThreeMonthsPercent": {
-            "type": "string"
-          },
-          "priceChangedOneMonthPercent": {
-            "type": "string"
-          },
-          "priceChangedFiveDayPercent": {
-            "type": "string"
-          },
-          "marketCap": {
-            "type": "string"
-          },
-          "issueShare": {
-            "type": "string"
-          },
-          "listedDate": {
-            "type": "string"
-          },
-          "subsector": {
-            "type": "string"
-          },
-          "sector": {
-            "type": "string"
-          },
-          "supersector": {
-            "type": "string"
-          },
-          "industry": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "market": {
-            "type": "string"
-          },
-          "symbol": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "priceChangedThreeMonthsPercent",
-          "priceChangedOneMonthPercent",
-          "priceChangedFiveDayPercent",
-          "marketCap",
-          "issueShare",
-          "listedDate",
-          "subsector",
-          "sector",
-          "supersector",
-          "industry",
-          "name",
-          "market",
-          "symbol"
-        ],
-        "type": "object"
       },
       "StockHistory": {
         "properties": {
@@ -579,9 +434,9 @@
     "securitySchemes": {}
   },
   "info": {
-    "title": "@chatbot/functions",
+    "title": "@chatbot/apis",
     "version": "0.0.1",
-    "description": "Functions",
+    "description": "APIs",
     "license": {
       "name": "MIT"
     },
@@ -765,88 +620,6 @@
         ]
       }
     },
-    "/api/forex/rates": {
-      "get": {
-        "operationId": "GetForexRates",
-        "responses": {
-          "200": {
-            "description": "List of Forex Rates",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ForexResponse"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["Forex"],
-        "security": [],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "category",
-            "required": false,
-            "schema": {
-              "$ref": "#/components/schemas/Category"
-            }
-          }
-        ]
-      }
-    },
-    "/api/health": {
-      "get": {
-        "operationId": "GetHealth",
-        "responses": {
-          "200": {
-            "description": "Get Health of Service",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "status": {
-                      "type": "string"
-                    }
-                  },
-                  "required": ["status"],
-                  "type": "object"
-                },
-                "examples": {
-                  "Example 1": {
-                    "value": {
-                      "status": "healthy"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "tags": ["Health"],
-        "security": [],
-        "parameters": []
-      }
-    },
-    "/api/status": {
-      "get": {
-        "operationId": "GetServiceStatuses",
-        "responses": {
-          "200": {
-            "description": "Status of All External Services",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StatusesResponse"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["Status"],
-        "security": [],
-        "parameters": []
-      }
-    },
     "/api/status/{service}": {
       "get": {
         "operationId": "GetServiceStatus",
@@ -883,29 +656,6 @@
             }
           }
         ]
-      }
-    },
-    "/api/vnindex/companies": {
-      "get": {
-        "operationId": "GetCompanies",
-        "responses": {
-          "200": {
-            "description": "List of Publicly Listed Companies",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/StockCompany"
-                  },
-                  "type": "array"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["VNINDEX"],
-        "security": [],
-        "parameters": []
       }
     },
     "/api/vnindex/history/{stockCode}": {

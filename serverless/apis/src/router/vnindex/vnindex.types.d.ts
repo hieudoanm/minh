@@ -8,19 +8,3 @@ export type StockHistory = {
   volume: string;
   timestamp: string;
 };
-
-export type StockCompany = {
-  symbol: string;
-  market: string;
-  name: string;
-  industry: string;
-  supersector: string;
-  sector: string;
-  subsector: string;
-  listedDate: string;
-  issueShare: string;
-  marketCap: string;
-  priceChangedFiveDayPercent: string;
-  priceChangedOneMonthPercent: string;
-  priceChangedThreeMonthsPercent: string;
-};

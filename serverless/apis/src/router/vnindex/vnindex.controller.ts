@@ -10,24 +10,18 @@ import {
 } from '@hieudoanm/express';
 import { Request as ExpressRequest, Response } from 'express';
 import {
-  WIDTH,
   HEIGHT,
   MAX_VALUE,
   STROKE_COLOR,
   STROKE_WIDTH,
+  WIDTH,
 } from '../../libs/chartify/defaults';
-import { chartifyHistory, getCompanies, getHistory } from './vnindex.service';
-import { StockCompany, StockHistory } from './vnindex.types';
+import { chartifyHistory, getHistory } from './vnindex.service';
+import { StockHistory } from './vnindex.types';
 
 @Tags('VNINDEX')
 @Route('api/vnindex')
 export class VnindexController extends Controller {
-  @Get('companies')
-  @SuccessResponse('200', 'List of Publicly Listed Companies')
-  public async getCompanies(): Promise<StockCompany[]> {
-    return getCompanies();
-  }
-
   @Get('history/:stockCode')
   @SuccessResponse('200', 'History of Stock')
   public async getHistory(

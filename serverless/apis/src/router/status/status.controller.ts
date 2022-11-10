@@ -8,19 +8,12 @@ import {
   Tags,
 } from '@hieudoanm/express';
 import { SERVICE_NAMES } from './status.constants';
-import { getStatus, getStatuses } from './status.service';
-import { Service, Status, StatusesResponse } from './status.types';
+import { getStatus } from './status.service';
+import { Service, Status } from './status.types';
 
 @Tags('Status')
 @Route('api/status')
 export class StatusesController extends Controller {
-  @Get()
-  @OperationId('GetServiceStatuses')
-  @SuccessResponse(200, 'Status of All External Services')
-  public async getStatuses(): Promise<StatusesResponse> {
-    return getStatuses();
-  }
-
   @Get(':service')
   @OperationId('GetServiceStatus')
   @SuccessResponse(200, 'Status of Single External Service')

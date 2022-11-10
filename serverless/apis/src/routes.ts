@@ -14,10 +14,6 @@ import {
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { CryptoController } from './router/crypto/crypto.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { ForexController } from './router/forex/forex.controller';
-// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { HealthController } from './router/health/health.controller';
-// WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { StatusesController } from './router/status/status.controller';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { VnindexController } from './router/vnindex/vnindex.controller';
@@ -276,43 +272,6 @@ const models: TsoaRoute.Models = {
     },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Record_string.number_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {},
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  ForexResponse: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        rates: { ref: 'Record_string.number_', required: true },
-        date: { dataType: 'string', required: true },
-        base: { dataType: 'string', required: true },
-        timestamp: { dataType: 'double', required: true },
-        success: { dataType: 'boolean', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  Category: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'union',
-      subSchemas: [
-        { dataType: 'enum', enums: ['top'] },
-        { dataType: 'enum', enums: ['personal'] },
-        { dataType: 'enum', enums: [null] },
-      ],
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Status: {
     dataType: 'refAlias',
     type: {
@@ -323,44 +282,6 @@ const models: TsoaRoute.Models = {
       ],
       validators: {},
     },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  StatusResponse: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        status: { ref: 'Status', required: true },
-        service: { dataType: 'string', required: true },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  'Record_Service.StatusResponse_': {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        atlassian: { ref: 'StatusResponse' },
-        bitbucket: { ref: 'StatusResponse' },
-        circleci: { ref: 'StatusResponse' },
-        confluence: { ref: 'StatusResponse' },
-        discord: { ref: 'StatusResponse' },
-        github: { ref: 'StatusResponse' },
-        hedera: { ref: 'StatusResponse' },
-        'jira-software': { ref: 'StatusResponse' },
-        solana: { ref: 'StatusResponse' },
-        trello: { ref: 'StatusResponse' },
-        vercel: { ref: 'StatusResponse' },
-      },
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  StatusesResponse: {
-    dataType: 'refAlias',
-    type: { ref: 'Record_Service.StatusResponse_', validators: {} },
   },
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   Service: {
@@ -380,29 +301,6 @@ const models: TsoaRoute.Models = {
         { dataType: 'enum', enums: ['trello'] },
         { dataType: 'enum', enums: ['vercel'] },
       ],
-      validators: {},
-    },
-  },
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  StockCompany: {
-    dataType: 'refAlias',
-    type: {
-      dataType: 'nestedObjectLiteral',
-      nestedProperties: {
-        priceChangedThreeMonthsPercent: { dataType: 'string', required: true },
-        priceChangedOneMonthPercent: { dataType: 'string', required: true },
-        priceChangedFiveDayPercent: { dataType: 'string', required: true },
-        marketCap: { dataType: 'string', required: true },
-        issueShare: { dataType: 'string', required: true },
-        listedDate: { dataType: 'string', required: true },
-        subsector: { dataType: 'string', required: true },
-        sector: { dataType: 'string', required: true },
-        supersector: { dataType: 'string', required: true },
-        industry: { dataType: 'string', required: true },
-        name: { dataType: 'string', required: true },
-        market: { dataType: 'string', required: true },
-        symbol: { dataType: 'string', required: true },
-      },
       validators: {},
     },
   },
@@ -515,110 +413,6 @@ export function RegisterRoutes(app: express.Router) {
   );
   // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
   app.get(
-    '/api/forex/rates',
-    ...fetchMiddlewares<RequestHandler>(ForexController),
-    ...fetchMiddlewares<RequestHandler>(
-      ForexController.prototype.getForexRates
-    ),
-
-    function ForexController_getForexRates(
-      request: any,
-      response: any,
-      next: any
-    ) {
-      const args = {
-        category: {
-          default: null,
-          in: 'query',
-          name: 'category',
-          ref: 'Category',
-        },
-      };
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new ForexController();
-
-        const promise = controller.getForexRates.apply(
-          controller,
-          validatedArgs as any
-        );
-        promiseHandler(controller, promise, response, 200, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
-    '/api/health',
-    ...fetchMiddlewares<RequestHandler>(HealthController),
-    ...fetchMiddlewares<RequestHandler>(HealthController.prototype.getHealth),
-
-    function HealthController_getHealth(
-      request: any,
-      response: any,
-      next: any
-    ) {
-      const args = {};
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new HealthController();
-
-        const promise = controller.getHealth.apply(
-          controller,
-          validatedArgs as any
-        );
-        promiseHandler(controller, promise, response, 200, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
-    '/api/status',
-    ...fetchMiddlewares<RequestHandler>(StatusesController),
-    ...fetchMiddlewares<RequestHandler>(
-      StatusesController.prototype.getStatuses
-    ),
-
-    function StatusesController_getStatuses(
-      request: any,
-      response: any,
-      next: any
-    ) {
-      const args = {};
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new StatusesController();
-
-        const promise = controller.getStatuses.apply(
-          controller,
-          validatedArgs as any
-        );
-        promiseHandler(controller, promise, response, 200, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
     '/api/status/:service',
     ...fetchMiddlewares<RequestHandler>(StatusesController),
     ...fetchMiddlewares<RequestHandler>(
@@ -648,39 +442,6 @@ export function RegisterRoutes(app: express.Router) {
         const controller = new StatusesController();
 
         const promise = controller.getServiceStatus.apply(
-          controller,
-          validatedArgs as any
-        );
-        promiseHandler(controller, promise, response, 200, next);
-      } catch (err) {
-        return next(err);
-      }
-    }
-  );
-  // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-  app.get(
-    '/api/vnindex/companies',
-    ...fetchMiddlewares<RequestHandler>(VnindexController),
-    ...fetchMiddlewares<RequestHandler>(
-      VnindexController.prototype.getCompanies
-    ),
-
-    function VnindexController_getCompanies(
-      request: any,
-      response: any,
-      next: any
-    ) {
-      const args = {};
-
-      // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-
-      let validatedArgs: any[] = [];
-      try {
-        validatedArgs = getValidatedArgs(args, request, response);
-
-        const controller = new VnindexController();
-
-        const promise = controller.getCompanies.apply(
           controller,
           validatedArgs as any
         );

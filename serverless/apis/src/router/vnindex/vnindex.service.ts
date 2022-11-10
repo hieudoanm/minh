@@ -2,22 +2,16 @@ import axios from '@hieudoanm/axios';
 import logger from '@hieudoanm/pino';
 import { chartify } from '../../libs/chartify';
 import {
-  WIDTH,
   HEIGHT,
   MAX_VALUE,
   STROKE_COLOR,
   STROKE_WIDTH,
+  WIDTH,
 } from '../../libs/chartify/defaults';
-import { StockCompany, StockHistory } from './vnindex.types';
+import { StockHistory } from './vnindex.types';
 
 const TABLEBASE_URL =
   'https://raw.githubusercontent.com/hieudoanm/tablebase/master';
-
-export const getCompanies = async (): Promise<StockCompany[]> => {
-  return axios.get<StockCompany[]>(
-    `${TABLEBASE_URL}/json/vietnam/stock/companies.json`
-  );
-};
 
 export const getHistory = async (
   stockCode: string,

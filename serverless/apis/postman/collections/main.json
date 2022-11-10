@@ -1,15 +1,15 @@
 {
   "item": [
     {
-      "id": "2d518c2b-73fe-4555-9905-a2df7192ac25",
+      "id": "33c17cfd-0c23-4661-a2e3-30139f4ab45f",
       "name": "api",
       "item": [
         {
-          "id": "704c58f3-8e2b-4186-abb0-ac13203ca98e",
+          "id": "0c82767a-e888-4908-a13b-e05a836bde80",
           "name": "crypto/coins",
           "item": [
             {
-              "id": "a68de035-d96c-460d-a103-2c52565b77b1",
+              "id": "fd02cf30-3347-4535-81bd-d2061bc9f1cf",
               "name": "Get Crypto Coins",
               "request": {
                 "name": "Get Crypto Coins",
@@ -67,7 +67,7 @@
               },
               "response": [
                 {
-                  "id": "dd8410e5-c477-4d3a-96cf-4b4a5987b81e",
+                  "id": "11891252-2b84-4ab2-ba73-8ccfdaa27bbf",
                   "name": "List of Crypto Coins",
                   "originalRequest": {
                     "url": {
@@ -124,7 +124,7 @@
               "event": []
             },
             {
-              "id": "26a6926d-3bce-4395-aec1-221c044a9512",
+              "id": "93dd2041-9e36-43da-870b-a4e608ccf57a",
               "name": "Get Crypto Coin",
               "request": {
                 "name": "Get Crypto Coin",
@@ -154,7 +154,7 @@
               },
               "response": [
                 {
-                  "id": "ea2797fe-9923-4541-bff0-f97ebe5aec25",
+                  "id": "c075a932-e606-4bd8-bc33-21e336b54d5f",
                   "name": "Get Crypto Coin",
                   "originalRequest": {
                     "url": {
@@ -182,7 +182,7 @@
                       "value": "application/json"
                     }
                   ],
-                  "body": "{\n  \"data\": {\n    \"coin\": {\n      \"tags\": [\n        \"sunt id nisi\",\n        \"nostrud consequat occaecat ipsum\"\n      ],\n      \"listedAt\": -73352097.56007037,\n      \"lowVolume\": false,\n      \"tier\": -25683516.080813363,\n      \"coinrankingUrl\": \"veniam irure non\",\n      \"allTimeHigh\": {\n        \"timestamp\": -39215151.028208695,\n        \"price\": \"irure veniam in qui et\"\n      },\n      \"sparkline\": [\n        \"veniam qui do adipisicing\",\n        \"id amet magna laborum\"\n      ],\n      \"rank\": 90349928.81867817,\n      \"change\": \"incididunt ut irure\",\n      \"priceAt\": -92715365.33841407,\n      \"btcPrice\": \"fugiat\",\n      \"price\": \"magna ut Except\",\n      \"fullyDilutedMarketCap\": \"reprehenderit ad voluptate\",\n      \"marketCap\": \"in nisi tempor nostrud do\",\n      \"24hVolume\": \"sit do dolore sed ullamco\",\n      \"numberOfExchanges\": -2034269.1940244585,\n      \"numberOfMarkets\": -95691533.52413493,\n      \"supply\": {\n        \"circulating\": \"ex elit Excepteur\",\n        \"total\": \"officia sed voluptate\",\n        \"max\": \"ut tem\",\n        \"supplyAt\": -61291270.072063185,\n        \"confirmed\": false\n      },\n      \"links\": [\n        {\n          \"url\": \"dolore minim ve\",\n          \"type\": \"dolor eiusmod\",\n          \"name\": \"sint Excepteur id enim Ut\"\n        },\n        {\n          \"url\": \"ex\",\n          \"type\": \"ex officia exercitation tempor consectetur\",\n          \"name\": \"Ut ipsum tempor\"\n        }\n      ],\n      \"websiteUrl\": \"voluptate elit\",\n      \"iconUrl\": \"ut sit\",\n      \"color\": \"non a\",\n      \"description\": \"anim laborum voluptate mollit aute\",\n      \"name\": \"et ad minim ullamco\",\n      \"symbol\": \"nostrud veniam ex\",\n      \"uuid\": \"culpa magna fugiat sit\"\n    }\n  },\n  \"status\": \"consequat dolore deserunt commodo\"\n}",
+                  "body": "{\n  \"data\": {\n    \"coin\": {\n      \"tags\": [\n        \"dolore anim fugiat\",\n        \"consectetur incididunt ad\"\n      ],\n      \"listedAt\": -32045770.366571397,\n      \"lowVolume\": true,\n      \"tier\": -60103663.60612625,\n      \"coinrankingUrl\": \"ad exercitation eiusmod\",\n      \"allTimeHigh\": {\n        \"timestamp\": 9733829.451549843,\n        \"price\": \"eiusmod dolor dol\"\n      },\n      \"sparkline\": [\n        \"veniam mollit minim sed\",\n        \"eu velit\"\n      ],\n      \"rank\": 56567506.76369545,\n      \"change\": \"id dolore elit\",\n      \"priceAt\": 74310451.89327058,\n      \"btcPrice\": \"ea in\",\n      \"price\": \"ullamco cillum magna\",\n      \"fullyDilutedMarketCap\": \"dolor irure velit\",\n      \"marketCap\": \"Ut reprehend\",\n      \"24hVolume\": \"anim exercitation cillum est enim\",\n      \"numberOfExchanges\": 95598359.46153817,\n      \"numberOfMarkets\": 63940087.76825321,\n      \"supply\": {\n        \"circulating\": \"veniam ut tempor proident cillum\",\n        \"total\": \"irure esse laboris proident dolor\",\n        \"max\": \"exercitation et voluptate sunt\",\n        \"supplyAt\": -89628807.79836993,\n        \"confirmed\": true\n      },\n      \"links\": [\n        {\n          \"url\": \"laborum sit\",\n          \"type\": \"dolore nulla incididunt\",\n          \"name\": \"nulla in\"\n        },\n        {\n          \"url\": \"non eiusmod consectetur\",\n          \"type\": \"eu commodo fugiat\",\n          \"name\": \"velit dolore aute minim\"\n        }\n      ],\n      \"websiteUrl\": \"voluptate\",\n      \"iconUrl\": \"qui velit non\",\n      \"color\": \"laboris dolor\",\n      \"description\": \"voluptate nulla dolore est commodo\",\n      \"name\": \"non cillum\",\n      \"symbol\": \"ex\",\n      \"uuid\": \"molli\"\n    }\n  },\n  \"status\": \"sed temp\"\n}",
                   "cookie": [],
                   "_postman_previewlanguage": "json"
                 }
@@ -193,77 +193,24 @@
           "event": []
         },
         {
-          "id": "84fbde6f-eca1-4c0a-9b88-9b939e58dd98",
-          "name": "Get Forex Rates",
+          "id": "5e72c336-611b-440e-bda1-3fe155d1f694",
+          "name": "Get Service Status",
           "request": {
-            "name": "Get Forex Rates",
+            "name": "Get Service Status",
             "description": {},
             "url": {
-              "path": ["api", "forex", "rates"],
-              "host": ["{{baseUrl}}"],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "category",
-                  "value": "<string>"
-                }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "a92bcd40-141a-42b1-8e9d-1a76cbdd0a05",
-              "name": "List of Forex Rates",
-              "originalRequest": {
-                "url": {
-                  "path": ["api", "forex", "rates"],
-                  "host": ["{{baseUrl}}"],
-                  "query": [
-                    {
-                      "key": "category",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": []
-                },
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"rates\": {},\n  \"date\": \"Lorem velit esse sit\",\n  \"base\": \"elit voluptate\",\n  \"timestamp\": 82373414.23941547,\n  \"success\": true\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": []
-        },
-        {
-          "id": "5db9a369-8c03-4b89-baab-c6862842c11f",
-          "name": "Get Health",
-          "request": {
-            "name": "Get Health",
-            "description": {},
-            "url": {
-              "path": ["api", "health"],
+              "path": ["api", "status", ":service"],
               "host": ["{{baseUrl}}"],
               "query": [],
-              "variable": []
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "service",
+                  "description": "(Required) "
+                }
+              ]
             },
             "header": [
               {
@@ -276,93 +223,9 @@
           },
           "response": [
             {
-              "id": "a3f94fed-c836-4c5b-be7f-f5df98a7c427",
-              "name": "Get Health of Service",
+              "id": "1967e7a6-3bcb-44ff-b484-cc242c22ab08",
+              "name": "Status of Single External Service",
               "originalRequest": {
-                "url": {
-                  "path": ["api", "health"],
-                  "host": ["{{baseUrl}}"],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"status\": \"healthy\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": []
-        },
-        {
-          "id": "1e000431-9624-4f09-b534-e60e5b5455e0",
-          "name": "status",
-          "item": [
-            {
-              "id": "7a9a8365-e255-47f7-81c6-cd3794fa54f9",
-              "name": "Get Service Statuses",
-              "request": {
-                "name": "Get Service Statuses",
-                "description": {},
-                "url": {
-                  "path": ["api", "status"],
-                  "host": ["{{baseUrl}}"],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "auth": null
-              },
-              "response": [
-                {
-                  "id": "d74f8c5c-811b-48c3-92e2-c5af906a9d12",
-                  "name": "Status of All External Services",
-                  "originalRequest": {
-                    "url": {
-                      "path": ["api", "status"],
-                      "host": ["{{baseUrl}}"],
-                      "query": [],
-                      "variable": []
-                    },
-                    "method": "GET",
-                    "body": {}
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "header": [
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    }
-                  ],
-                  "body": "{\n  \"atlassian\": {\n    \"status\": \"active\",\n    \"service\": \"elit enim sunt sit\"\n  },\n  \"bitbucket\": {\n    \"status\": \"active\",\n    \"service\": \"laborum velit in\"\n  },\n  \"circleci\": {\n    \"status\": \"active\",\n    \"service\": \"dolor\"\n  },\n  \"confluence\": {\n    \"status\": \"inactive\",\n    \"service\": \"aute sunt occaecat sint\"\n  },\n  \"discord\": {\n    \"status\": \"inactive\",\n    \"service\": \"eiusmod quis anim mollit\"\n  },\n  \"github\": {\n    \"status\": \"inactive\",\n    \"service\": \"minim sint cupidatat tempor eu\"\n  },\n  \"hedera\": {\n    \"status\": \"active\",\n    \"service\": \"ipsum dolore Ut cillum in\"\n  },\n  \"jira-software\": {\n    \"status\": \"inactive\",\n    \"service\": \"commodo esse\"\n  },\n  \"solana\": {\n    \"status\": \"inactive\",\n    \"service\": \"ipsum cillum\"\n  },\n  \"trello\": {\n    \"status\": \"inactive\",\n    \"service\": \"ex laboris cupidatat\"\n  },\n  \"vercel\": {\n    \"status\": \"active\",\n    \"service\": \"proident elit cupidatat dolor sed\"\n  }\n}",
-                  "cookie": [],
-                  "_postman_previewlanguage": "json"
-                }
-              ],
-              "event": []
-            },
-            {
-              "id": "91191e0f-64bc-4e1b-9cba-707bab92586f",
-              "name": "Get Service Status",
-              "request": {
-                "name": "Get Service Status",
-                "description": {},
                 "url": {
                   "path": ["api", "status", ":service"],
                   "host": ["{{baseUrl}}"],
@@ -373,6 +236,59 @@
                       "type": "any",
                       "value": "<string>",
                       "key": "service",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"inactive\",\n  \"name\": \"tempor ut\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "cd6e17c2-5c76-4c91-ac55-793c77e015f4",
+          "name": "vnindex/history/{stock Code}",
+          "item": [
+            {
+              "id": "77064b7f-0e8e-4c3f-bb56-a93f1123c5d7",
+              "name": "Get History",
+              "request": {
+                "name": "Get History",
+                "description": {},
+                "url": {
+                  "path": ["api", "vnindex", "history", ":stockCode"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stockCode",
                       "description": "(Required) "
                     }
                   ]
@@ -388,119 +304,18 @@
               },
               "response": [
                 {
-                  "id": "54828337-f5c2-4f07-9067-36a6fa370efa",
-                  "name": "Status of Single External Service",
+                  "id": "07d31799-9d5d-4380-884d-72a1bec08e84",
+                  "name": "History of Stock",
                   "originalRequest": {
-                    "url": {
-                      "path": ["api", "status", ":service"],
-                      "host": ["{{baseUrl}}"],
-                      "query": [],
-                      "variable": [
-                        {
-                          "disabled": false,
-                          "type": "any",
-                          "value": "<string>",
-                          "key": "service",
-                          "description": "(Required) "
-                        }
-                      ]
-                    },
-                    "method": "GET",
-                    "body": {}
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "header": [
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    }
-                  ],
-                  "body": "{\n  \"status\": \"active\",\n  \"name\": \"nulla ullamco in pariatur\"\n}",
-                  "cookie": [],
-                  "_postman_previewlanguage": "json"
-                }
-              ],
-              "event": []
-            }
-          ],
-          "event": []
-        },
-        {
-          "id": "a44e13f6-53f1-448c-badf-b5b865876055",
-          "name": "vnindex",
-          "item": [
-            {
-              "id": "6077975d-8056-4d4e-a676-14b552b3ca91",
-              "name": "Get Companies",
-              "request": {
-                "name": "Get Companies",
-                "description": {},
-                "url": {
-                  "path": ["api", "vnindex", "companies"],
-                  "host": ["{{baseUrl}}"],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "auth": null
-              },
-              "response": [
-                {
-                  "id": "1a971701-98ea-40b6-91ce-f86ed49df868",
-                  "name": "List of Publicly Listed Companies",
-                  "originalRequest": {
-                    "url": {
-                      "path": ["api", "vnindex", "companies"],
-                      "host": ["{{baseUrl}}"],
-                      "query": [],
-                      "variable": []
-                    },
-                    "method": "GET",
-                    "body": {}
-                  },
-                  "status": "OK",
-                  "code": 200,
-                  "header": [
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    }
-                  ],
-                  "body": "[\n  {\n    \"priceChangedThreeMonthsPercent\": \"ut Ut mollit ex ad\",\n    \"priceChangedOneMonthPercent\": \"qui enim\",\n    \"priceChangedFiveDayPercent\": \"nulla in est Ut\",\n    \"marketCap\": \"ullamco mollit deserunt ipsum\",\n    \"issueShare\": \"in quis\",\n    \"listedDate\": \"exercitation esse\",\n    \"subsector\": \"mollit\",\n    \"sector\": \"exercitation dolore qui id\",\n    \"supersector\": \"minim enim\",\n    \"industry\": \"pariatur amet commodo enim\",\n    \"name\": \"dolor irure sit quis\",\n    \"market\": \"do\",\n    \"symbol\": \"esse et laborum\"\n  },\n  {\n    \"priceChangedThreeMonthsPercent\": \"nisi irure\",\n    \"priceChangedOneMonthPercent\": \"magna irure laborum\",\n    \"priceChangedFiveDayPercent\": \"et in\",\n    \"marketCap\": \"velit eiusmod\",\n    \"issueShare\": \"consequat mollit quis irure sint\",\n    \"listedDate\": \"culpa incididunt\",\n    \"subsector\": \"nisi velit ut\",\n    \"sector\": \"tempor occaecat dolor\",\n    \"supersector\": \"deserunt\",\n    \"industry\": \"ea esse adipisicing\",\n    \"name\": \"incididunt labore quis\",\n    \"market\": \"ut eu mollit\",\n    \"symbol\": \"et reprehenderit\"\n  }\n]",
-                  "cookie": [],
-                  "_postman_previewlanguage": "json"
-                }
-              ],
-              "event": []
-            },
-            {
-              "id": "d3318504-5a75-4eff-82c1-b986535a9892",
-              "name": "history/{stock Code}",
-              "item": [
-                {
-                  "id": "abcf3a49-81e1-43a5-8263-38ccbd349cf8",
-                  "name": "Get History",
-                  "request": {
-                    "name": "Get History",
-                    "description": {},
                     "url": {
                       "path": ["api", "vnindex", "history", ":stockCode"],
                       "host": ["{{baseUrl}}"],
                       "query": [
                         {
-                          "disabled": false,
                           "key": "offset",
                           "value": "0"
                         },
                         {
-                          "disabled": false,
                           "key": "limit",
                           "value": "20"
                         }
@@ -515,67 +330,89 @@
                         }
                       ]
                     },
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
                     "method": "GET",
-                    "auth": null
+                    "body": {}
                   },
-                  "response": [
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
                     {
-                      "id": "29f4d8f7-9a5e-400d-9168-4d3ee0482fec",
-                      "name": "History of Stock",
-                      "originalRequest": {
-                        "url": {
-                          "path": ["api", "vnindex", "history", ":stockCode"],
-                          "host": ["{{baseUrl}}"],
-                          "query": [
-                            {
-                              "key": "offset",
-                              "value": "0"
-                            },
-                            {
-                              "key": "limit",
-                              "value": "20"
-                            }
-                          ],
-                          "variable": [
-                            {
-                              "disabled": false,
-                              "type": "any",
-                              "value": "<string>",
-                              "key": "stockCode",
-                              "description": "(Required) "
-                            }
-                          ]
-                        },
-                        "method": "GET",
-                        "body": {}
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "header": [
-                        {
-                          "key": "Content-Type",
-                          "value": "application/json"
-                        }
-                      ],
-                      "body": "[\n  {\n    \"timestamp\": \"cupidatat veniam exercitation\",\n    \"volume\": \"culpa incididunt sunt veniam\",\n    \"close\": \"Duis occaecat irure\",\n    \"low\": \"non mollit dolor et laboris\",\n    \"high\": \"aute labore\",\n    \"open\": \"anim mollit est enim\",\n    \"symbol\": \"anim\",\n    \"date\": \"deserunt\"\n  },\n  {\n    \"timestamp\": \"eiusmod quis sit\",\n    \"volume\": \"pariatur i\",\n    \"close\": \"reprehenderit nostrud sunt sint qui\",\n    \"low\": \"labore\",\n    \"high\": \"do cillum magna anim\",\n    \"open\": \"pari\",\n    \"symbol\": \"eu laboris\",\n    \"date\": \"nis\"\n  }\n]",
-                      "cookie": [],
-                      "_postman_previewlanguage": "json"
+                      "key": "Content-Type",
+                      "value": "application/json"
                     }
                   ],
-                  "event": []
+                  "body": "[\n  {\n    \"timestamp\": \"laborum id labore\",\n    \"volume\": \"fugiat pariatur voluptate in sit\",\n    \"close\": \"elit ea\",\n    \"low\": \"id veniam\",\n    \"high\": \"dolor labore mi\",\n    \"open\": \"aute dolor irure quis\",\n    \"symbol\": \"ut id occaecat\",\n    \"date\": \"id irure consectetur sint\"\n  },\n  {\n    \"timestamp\": \"dolore laborum eiusmod\",\n    \"volume\": \"consequat\",\n    \"close\": \"ex elit ut minim\",\n    \"low\": \"ullamco in commodo labore\",\n    \"high\": \"pariatur quis irure\",\n    \"open\": \"proi\",\n    \"symbol\": \"Lorem deserunt adipisicing\",\n    \"date\": \"reprehenderit\"\n  }\n]",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": []
+            },
+            {
+              "id": "63fb1f75-1590-4f56-921e-fdf2878a427b",
+              "name": "Chartify History",
+              "request": {
+                "name": "Chartify History",
+                "description": {},
+                "url": {
+                  "path": ["api", "vnindex", "history", ":stockCode", "chart"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "key": "width",
+                      "value": "500"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "height",
+                      "value": "100"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "minValue",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "maxValue",
+                      "value": "200"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "strokeColor",
+                      "value": "#0074d9"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "strokeWidth",
+                      "value": "2"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "stockCode",
+                      "description": "(Required) "
+                    }
+                  ]
                 },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null
+              },
+              "response": [
                 {
-                  "id": "e92af1cd-ec17-4953-9977-234401afbceb",
-                  "name": "Chartify History",
-                  "request": {
-                    "name": "Chartify History",
-                    "description": {},
+                  "id": "a5ef1ce3-e62b-4137-86a4-47a14a0039b3",
+                  "name": "Chart SVG",
+                  "originalRequest": {
                     "url": {
                       "path": [
                         "api",
@@ -587,32 +424,26 @@
                       "host": ["{{baseUrl}}"],
                       "query": [
                         {
-                          "disabled": false,
                           "key": "width",
                           "value": "500"
                         },
                         {
-                          "disabled": false,
                           "key": "height",
                           "value": "100"
                         },
                         {
-                          "disabled": false,
                           "key": "minValue",
                           "value": "0"
                         },
                         {
-                          "disabled": false,
                           "key": "maxValue",
                           "value": "200"
                         },
                         {
-                          "disabled": false,
                           "key": "strokeColor",
                           "value": "#0074d9"
                         },
                         {
-                          "disabled": false,
                           "key": "strokeWidth",
                           "value": "2"
                         }
@@ -627,82 +458,20 @@
                         }
                       ]
                     },
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json"
-                      }
-                    ],
                     "method": "GET",
-                    "auth": null
+                    "body": {}
                   },
-                  "response": [
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
                     {
-                      "id": "473a4c5a-7431-4245-8395-fbdc17032960",
-                      "name": "Chart SVG",
-                      "originalRequest": {
-                        "url": {
-                          "path": [
-                            "api",
-                            "vnindex",
-                            "history",
-                            ":stockCode",
-                            "chart"
-                          ],
-                          "host": ["{{baseUrl}}"],
-                          "query": [
-                            {
-                              "key": "width",
-                              "value": "500"
-                            },
-                            {
-                              "key": "height",
-                              "value": "100"
-                            },
-                            {
-                              "key": "minValue",
-                              "value": "0"
-                            },
-                            {
-                              "key": "maxValue",
-                              "value": "200"
-                            },
-                            {
-                              "key": "strokeColor",
-                              "value": "#0074d9"
-                            },
-                            {
-                              "key": "strokeWidth",
-                              "value": "2"
-                            }
-                          ],
-                          "variable": [
-                            {
-                              "disabled": false,
-                              "type": "any",
-                              "value": "<string>",
-                              "key": "stockCode",
-                              "description": "(Required) "
-                            }
-                          ]
-                        },
-                        "method": "GET",
-                        "body": {}
-                      },
-                      "status": "OK",
-                      "code": 200,
-                      "header": [
-                        {
-                          "key": "Content-Type",
-                          "value": "application/json"
-                        }
-                      ],
-                      "body": "null",
-                      "cookie": [],
-                      "_postman_previewlanguage": "json"
+                      "key": "Content-Type",
+                      "value": "application/json"
                     }
                   ],
-                  "event": []
+                  "body": "null",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
                 }
               ],
               "event": []
@@ -723,11 +492,11 @@
     }
   ],
   "info": {
-    "_postman_id": "ad233fe1-f0a3-4fd3-b48e-fe3efc1cc750",
-    "name": "@chatbot/functions",
+    "_postman_id": "83392f0d-2ba3-4d65-af6c-f424e5ec5934",
+    "name": "@chatbot/apis",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
-      "content": "Functions\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "content": "APIs\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
       "type": "text/plain"
     }
   }
