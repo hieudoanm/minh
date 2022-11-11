@@ -13,6 +13,17 @@ import (
 	"golang.org/x/exp/slices"
 )
 
+func Getenv(key string, defaultValue string) string {
+	var value string = os.Getenv(key)
+	if defaultValue == "" {
+		return value
+	}
+	if defaultValue != "" && value == "" {
+		return defaultValue
+	}
+	return value
+}
+
 var API_KEY_FIXER string = os.Getenv("API_KEY_FIXER")
 
 func GetQueryParameter(request *http.Request, key string, defaultValue string) string {
@@ -470,6 +481,7 @@ func main() {
 	router.GET("/vnindex/history/:symbol", GetVnindexHistory)
 	router.GET("/youtube/trending", GetYouTubeTrending)
 	// Start
-	log.Println("🚀 Server is listening on port 8080")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	var PORT string = Getenv("PORT", "8080")
+	log.Printf("🚀 Server is listening on port %s", PORT)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", PORT), router))
 }
