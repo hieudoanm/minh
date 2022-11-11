@@ -5,24 +5,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"strings"
+
+	"chatbot-webhook/clients/telegram"
+	"chatbot-webhook/utils"
 
 	"github.com/julienschmidt/httprouter"
 )
-
-func Getenv(key string, defaultValue string) string {
-	var value string = os.Getenv(key)
-	if defaultValue == "" {
-		return value
-	}
-	if defaultValue != "" && value == "" {
-		return defaultValue
-	}
-	return value
-}
-
-var TELEGRAM_TOKEN string = Getenv("TELEGRAM_TOKEN", "")
 
 type StatusResponse struct {
 	Status string `json:"status"`
@@ -32,10 +21,6 @@ func GetHealth(writer http.ResponseWriter, request *http.Request, _ httprouter.P
 	writer.Header().Set("Content-Type", "application/json")
 	var healthResponse StatusResponse = StatusResponse{"healthy"}
 	json.NewEncoder(writer).Encode(healthResponse)
-}
-
-func SendMessage(chatId int, message string) {
-
 }
 
 func ProcessMessage(text string) string {
@@ -71,8 +56,7 @@ func ProcessWebhookRequestBody(webhookRequestBody WebhookRequestBody) {
 	var text string = webhookRequestBody.Message.Text
 	var lowerText string = strings.ToLower(text)
 	var message string = ProcessMessage(lowerText)
-	SendMessage(chatId, message)
-
+	telegram.SendMessage(chatId, message, "markdown")
 }
 
 func GetWebhook(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
@@ -90,13 +74,13 @@ func GetWebhook(writer http.ResponseWriter, request *http.Request, _ httprouter.
 	json.NewEncoder(writer).Encode(healthResponse)
 }
 
-func Main() {
+func main() {
 	router := httprouter.New()
 	// Router
 	router.GET("/health", GetHealth)
 	router.GET("/webhook", GetWebhook)
 	// Start
-	var PORT string = Getenv("PORT", "8080")
+	var PORT string = utils.Getenv("PORT", "8080")
 	log.Printf("🚀 Server is listening on port %s", PORT)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", PORT), router))
 }
