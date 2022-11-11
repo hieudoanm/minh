@@ -1,0 +1,56 @@
+{
+  "name": "@chatbot/visualiser",
+  "version": "0.0.1",
+  "description": "Visualiser",
+  "main": "index.js",
+  "repository": "git@github.com:hieudoanm/chatbot.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 8",
+    "yarn": "1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
+    "@fontsource/roboto": "4.5.8",
+    "@hieudoanm/axios": "0.0.1",
+    "@hieudoanm/use-axios": "0.0.1",
+    "@hieudoanm/use-window-size": "0.0.1",
+    "@hieudoanm/utils": "0.0.1",
+    "@mui/icons-material": "5.10.9",
+    "@mui/material": "5.10.13",
+    "d3": "7.6.1",
+    "md5": "2.3.0",
+    "next": "13.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.56.1",
+    "uuid": "9.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@types/d3": "7.4.0",
+    "@types/md5": "2.3.2",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "@types/uuid": "8.3.4",
+    "autoprefixer": "10.4.13",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
+    "jest": "29.3.1",
+    "postcss": "8.4.18",
+    "tailwindcss": "3.2.3",
+    "typescript": "4.8.4"
+  }
+}

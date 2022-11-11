@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "baa225be-62fe-48fd-94fa-0a8ee9578f96",
+      "name": "Chartify History",
+      "request": {
+        "name": "Chartify History",
+        "description": {},
+        "url": {
+          "path": ["api", "vnindex", "history", ":symbol", "chart"],
+          "host": ["{{baseUrl}}"],
+          "query": [
+            {
+              "disabled": false,
+              "key": "width",
+              "value": "500"
+            },
+            {
+              "disabled": false,
+              "key": "height",
+              "value": "100"
+            },
+            {
+              "disabled": false,
+              "key": "minValue",
+              "value": "0"
+            },
+            {
+              "disabled": false,
+              "key": "maxValue",
+              "value": "200"
+            },
+            {
+              "disabled": false,
+              "key": "strokeColor",
+              "value": "#0074d9"
+            },
+            {
+              "disabled": false,
+              "key": "strokeWidth",
+              "value": "2"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "symbol",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d8aeb12c-28ec-4b58-996f-9ffe345149ad",
+          "name": "Chart SVG",
+          "originalRequest": {
+            "url": {
+              "path": ["api", "vnindex", "history", ":symbol", "chart"],
+              "host": ["{{baseUrl}}"],
+              "query": [
+                {
+                  "key": "width",
+                  "value": "500"
+                },
+                {
+                  "key": "height",
+                  "value": "100"
+                },
+                {
+                  "key": "minValue",
+                  "value": "0"
+                },
+                {
+                  "key": "maxValue",
+                  "value": "200"
+                },
+                {
+                  "key": "strokeColor",
+                  "value": "#0074d9"
+                },
+                {
+                  "key": "strokeWidth",
+                  "value": "2"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "symbol",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "null",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d7fd5a46-d1d0-4024-9e30-46a2ba1e9b4e",
+    "name": "@chatbot/apis",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "APIs\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
