@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"strconv"
 )
 
 const TELEGRAM_BOT = "https://api.telegram.org/bot"
@@ -34,9 +33,9 @@ func Post(url string, requestBody map[string]string) ([]byte, error) {
 	return body, nil
 }
 
-func SendMessage(chatId int, message string, parseMode string) ([]byte, error) {
+func SendMessage(chatId string, message string, parseMode string) ([]byte, error) {
 	var requestBody map[string]string = map[string]string{}
-	requestBody["chat_id"] = strconv.Itoa(chatId)
+	requestBody["chat_id"] = chatId
 	requestBody["text"] = message
 	if parseMode == "" {
 		requestBody["parse_mode"] = "markdown"

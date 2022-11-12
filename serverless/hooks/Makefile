@@ -6,3 +6,15 @@ build:
 
 start:
 		./main
+
+send-news:
+		go run scripts/telegram/messages/football/main.go
+
+send-weather:
+		go run scripts/telegram/messages/forex/main.go
+
+send-news:
+		go run scripts/telegram/messages/news/main.go
+
+send-weather:
+		go run scripts/telegram/messages/weather/main.go
