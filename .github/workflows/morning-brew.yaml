@@ -36,10 +36,10 @@ jobs:
         run: |
           echo $(date +'%Y-%m-%dT%H:%M:%S')
       - name: Install Dependencies
-        working-directory: ./serverless/webhook
-        run: go get ./...
+        working-directory: ./serverless/hooks
+        run: go get
       - name: Run Job
-        working-directory: ./serverless/webhook
+        working-directory: ./serverless/hooks
         run: |
           make send-football
           make send-forex
