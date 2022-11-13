@@ -1,9 +1,0 @@
-{
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [{ "key": "access-control-allow-origin", "value": "*" }]
-    }
-  ],
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
-}

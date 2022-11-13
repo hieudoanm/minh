@@ -2,6 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn lint:apis
-yarn lint:webhook
 yarn lint:visualiser
 yarn pretty-quick --staged
