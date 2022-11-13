@@ -56,3 +56,69 @@ func SendMessage(chatId string, message string, parseMode string) ([]byte, error
 
 	return body, nil
 }
+
+func SetWebhook(webhook string) ([]byte, error) {
+	var requestBody map[string]string = map[string]string{}
+	requestBody["url"] = webhook
+
+	var url = fmt.Sprintf(
+		"%s%s/setWebhook",
+		TELEGRAM_BOT,
+		TELEGRAM_TOKEN,
+	)
+
+	body, postError := Post(url, requestBody)
+	if postError != nil {
+		return nil, postError
+	}
+
+	return body, nil
+}
+
+func DeleteWebhook(webhook string) ([]byte, error) {
+	var requestBody map[string]string = map[string]string{}
+	requestBody["url"] = webhook
+
+	var url = fmt.Sprintf(
+		"%s%s/deleteWebhook",
+		TELEGRAM_BOT,
+		TELEGRAM_TOKEN,
+	)
+
+	body, postError := Post(url, requestBody)
+	if postError != nil {
+		return nil, postError
+	}
+
+	return body, nil
+}
+
+type WebhookInfo struct {
+	Ok     bool `json:"ok"`
+	Result struct {
+		Url                  string `json:"url"`
+		HasCustomCertificate bool   `json:"has_custom_certificate"`
+		PendingUpdateCount   int    `json:"pending_update_count"`
+	} `json:"result"`
+}
+
+func GetWebhookInfo() (WebhookInfo, error) {
+	var url = fmt.Sprintf(
+		"%s%s/getWebhookInfo",
+		TELEGRAM_BOT,
+		TELEGRAM_TOKEN,
+	)
+
+	body, postError := Post(url, map[string]string{})
+	if postError != nil {
+		return WebhookInfo{}, postError
+	}
+
+	var webhookInfo WebhookInfo
+	jsonUnmarshalError := json.Unmarshal(body, &webhookInfo)
+	if jsonUnmarshalError != nil {
+		return WebhookInfo{}, jsonUnmarshalError
+	}
+
+	return webhookInfo, nil
+}

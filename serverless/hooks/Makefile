@@ -1,6 +1,9 @@
 serve:
 		go run main.go
 
+ngrok:
+		ngrok http 8080
+
 build:
 		go build main.go
 
