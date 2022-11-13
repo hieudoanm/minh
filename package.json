@@ -13,21 +13,11 @@
     "yarn": "1"
   },
   "scripts": {
-    "build:apis": "yarn workspace @chatbot/apis build",
     "build:visualiser": "yarn workspace @chatbot/visualiser build",
-    "build:webhook": "yarn workspace @chatbot/webhook build",
-    "dev:apis": "yarn workspace @chatbot/apis dev",
     "dev:visualiser": "yarn workspace @chatbot/visualiser dev",
-    "dev:webhook": "yarn workspace @chatbot/webhook dev",
-    "lint:apis": "yarn workspace @chatbot/apis lint",
     "lint:visualiser": "yarn workspace @chatbot/visualiser lint",
-    "lint:webhook": "yarn workspace @chatbot/webhook lint",
-    "start:apis": "yarn workspace @chatbot/apis start",
     "start:visualiser": "yarn workspace @chatbot/visualiser start",
-    "start:webhook": "yarn workspace @chatbot/webhook start",
-    "test:apis": "yarn workspace @chatbot/apis test",
-    "test:visualiser": "yarn workspace @chatbot/visualiser test",
-    "test:webhook": "yarn workspace @chatbot/webhook test"
+    "test:visualiser": "yarn workspace @chatbot/visualiser test"
   },
   "devDependencies": {
     "husky": "8.0.2",
