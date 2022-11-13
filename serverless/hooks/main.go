@@ -5,9 +5,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 
 	"chatbot-webhook/clients/telegram"
+	"chatbot-webhook/services/football"
+	"chatbot-webhook/services/news"
+	"chatbot-webhook/services/weather"
 	"chatbot-webhook/utils"
 
 	"github.com/julienschmidt/httprouter"
@@ -23,8 +27,34 @@ func GetHealth(writer http.ResponseWriter, request *http.Request, _ httprouter.P
 	json.NewEncoder(writer).Encode(healthResponse)
 }
 
+var INTENTS []string = []string{
+	"blockchain news",
+	"forex",
+	"liverpool",
+	"news",
+	"uuid",
+	"weather",
+}
+
 func ProcessMessage(text string) string {
-	return text
+	if utils.Contains(INTENTS, text) {
+		if text == "weather" {
+			var airVisualMessage = weather.GetAirVisualMessage()
+			var weatherMessage = weather.GetWeatherMessage("ho chi minh city")
+			return fmt.Sprintf("%s\n%s", airVisualMessage, weatherMessage)
+		} else if text == "football" {
+			return football.GetMatchesMessage(64)
+		} else if text == "news" {
+			return news.GetTopHeadlinesMessage()
+		} else if text == "blockchain news" {
+			return news.GetBlockchainCryptoMessage()
+		} else {
+			return "N/A"
+		}
+	} else if text == "help" {
+		return strings.Join(INTENTS, "\n")
+	}
+	return "N/A"
 }
 
 type WebhookRequestBody struct {
@@ -56,7 +86,7 @@ func ProcessWebhookRequestBody(webhookRequestBody WebhookRequestBody) {
 	var text string = webhookRequestBody.Message.Text
 	var lowerText string = strings.ToLower(text)
 	var message string = ProcessMessage(lowerText)
-	telegram.SendMessage(chatId, message, "markdown")
+	telegram.SendMessage(strconv.Itoa(chatId), message, "markdown")
 }
 
 func GetWebhook(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {

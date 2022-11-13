@@ -9,6 +9,6 @@ import (
 var TELEGRAM_CHAT_ID = utils.Getenv("TELEGRAM_CHAT_ID", "")
 
 func main() {
-	var message = football.GetMatchesMessage()
+	var message = football.GetMatchesMessage(64)
 	telegram.SendMessage(TELEGRAM_CHAT_ID, message, "")
 }

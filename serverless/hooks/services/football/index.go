@@ -40,8 +40,8 @@ func GetNextMatchMessage(matches []football.Match) string {
 	return fmt.Sprintf("%s\n%s %d - %d %s", utcDate, homeTeam, homeScore, awayScore, awayTeam)
 }
 
-func GetMatchesMessage() string {
-	matchesResponse, matchesError := football.GetMatchesByTeam(API_KEY_FOOTBALL_DATA, 64)
+func GetMatchesMessage(teamId int) string {
+	matchesResponse, matchesError := football.GetMatchesByTeam(API_KEY_FOOTBALL_DATA, teamId)
 	if matchesError != nil {
 		return "Football: N/A"
 	}
