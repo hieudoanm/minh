@@ -2,6 +2,7 @@ package news
 
 import (
 	"fmt"
+	"log"
 	"strings"
 
 	"chatbot-webhook/clients/news"
@@ -44,19 +45,19 @@ func GetTopHeadlinesMessage() string {
 }
 
 func GetBlockchainCryptoMessage() string {
-	articles, articlesError := news.GetTopHeadlines(
-		news.TopHeadlinesRequest{
+	articles, articlesError := news.GetEverything(
+		news.EverythingRequest{
 			ApiKey:   API_KEY_NEWS,
 			Sources:  []string{},
 			Q:        "blockchain+crypto",
-			Category: "",
-			Country:  "",
-			Page:     0,
-			PageSize: 0,
+			Page:     1,
+			PageSize: 10,
 		},
 	)
 	if articlesError != nil {
+		log.Println("articlesError", articlesError)
 		return "News: N/A"
 	}
+	log.Println("articles", len(articles))
 	return GetMessage(articles)
 }

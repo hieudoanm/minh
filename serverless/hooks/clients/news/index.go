@@ -85,6 +85,106 @@ type Article struct {
 	Content     string `json:"content"`
 }
 
+type ArticlesResponseBody struct {
+	Status       string    `json:"status"`
+	Message      string    `json:"message"`
+	TotalResults int       `json:"totalResults"`
+	Articles     []Article `json:"articles"`
+}
+
+type EverythingRequest struct {
+	ApiKey         string   `json:"apiKey"`
+	Language       string   `json:"language"`
+	From           string   `json:"from"`
+	To             string   `json:"to"`
+	Page           int      `json:"page"`
+	PageSize       int      `json:"pageSize"`
+	Q              string   `json:"q"`
+	SortBy         string   `json:"sortBy"`
+	Sources        []string `json:"sources"`
+	SearchIn       []string `json:"searchIn"`
+	Domains        []string `json:"domains"`
+	ExcludeDomains []string `json:"excludeDomains"`
+}
+
+func GetEverything(everythingRequest EverythingRequest) ([]Article, error) {
+	// Assign default value
+	if everythingRequest.Language == "" {
+		everythingRequest.Language = "en"
+	}
+	if everythingRequest.SortBy == "" {
+		everythingRequest.SortBy = "publishedAt"
+	}
+	if everythingRequest.Page == 0 {
+		everythingRequest.Page = 1
+	}
+	if everythingRequest.PageSize == 0 {
+		everythingRequest.PageSize = 100
+	}
+	// Build query parameters
+	var queryParameters []string = []string{}
+	if everythingRequest.ApiKey != "" {
+		queryParameters = append(queryParameters, "apiKey="+everythingRequest.ApiKey)
+	}
+	if everythingRequest.Language != "" {
+		queryParameters = append(queryParameters, "language="+everythingRequest.Language)
+	}
+	if everythingRequest.From != "" {
+		queryParameters = append(queryParameters, "from="+everythingRequest.From)
+	}
+	if everythingRequest.To != "" {
+		queryParameters = append(queryParameters, "to="+everythingRequest.To)
+	}
+	if everythingRequest.Page > 0 {
+		queryParameters = append(queryParameters, "page="+strconv.Itoa(everythingRequest.Page))
+	}
+	if everythingRequest.PageSize > 0 {
+		queryParameters = append(queryParameters, "pageSize="+strconv.Itoa(everythingRequest.PageSize))
+	}
+	if everythingRequest.Q != "" {
+		queryParameters = append(queryParameters, "q="+everythingRequest.Q)
+	}
+	if everythingRequest.SortBy != "" {
+		queryParameters = append(queryParameters, "sortBy="+everythingRequest.SortBy)
+	}
+	if len(everythingRequest.Domains) > 0 {
+		queryParameters = append(queryParameters, "domains="+strings.Join(everythingRequest.Domains, ","))
+	}
+	if len(everythingRequest.ExcludeDomains) > 0 {
+		queryParameters = append(queryParameters, "excludeDomains="+strings.Join(everythingRequest.ExcludeDomains, ","))
+	}
+	if len(everythingRequest.Sources) > 0 {
+		queryParameters = append(queryParameters, "sources="+strings.Join(everythingRequest.Sources, ","))
+	}
+	if len(everythingRequest.SearchIn) > 0 {
+		queryParameters = append(queryParameters, "searchIn="+strings.Join(everythingRequest.SearchIn, ","))
+	}
+	// Build url
+	var url = fmt.Sprintf(
+		"%s/everything?%s",
+		NEWS_V2,
+		strings.Join(queryParameters, "&"),
+	)
+	// Get
+	body, getError := http.Get(url)
+	if getError != nil {
+		return nil, getError
+	}
+	// Parse Response
+	var articlesResponseBody ArticlesResponseBody
+	jsonUnmarshalError := json.Unmarshal(body, &articlesResponseBody)
+	if jsonUnmarshalError != nil {
+		return nil, jsonUnmarshalError
+	}
+	// Get Articles
+	if articlesResponseBody.Status != "ok" {
+		return []Article{}, errors.New(articlesResponseBody.Message)
+	}
+
+	return articlesResponseBody.Articles, nil
+
+}
+
 type TopHeadlinesRequest struct {
 	ApiKey   string   `json:"apiKey"`
 	Sources  []string `json:"sources"`
@@ -93,12 +193,6 @@ type TopHeadlinesRequest struct {
 	Country  string   `json:"country"`
 	Page     int      `json:"page"`
 	PageSize int      `json:"pageSize"`
-}
-
-type TopHeadlinesResponseBody struct {
-	Status   string    `json:"status"`
-	Message  string    `json:"message"`
-	Articles []Article `json:"articles"`
 }
 
 func GetTopHeadlines(topHeadlinesRequest TopHeadlinesRequest) ([]Article, error) {
@@ -144,21 +238,21 @@ func GetTopHeadlines(topHeadlinesRequest TopHeadlinesRequest) ([]Article, error)
 		NEWS_V2,
 		strings.Join(queryParameters, "&"),
 	)
-
+	// Get
 	body, getError := http.Get(url)
 	if getError != nil {
 		return nil, getError
 	}
-
-	var topHeadlinesResponseBody TopHeadlinesResponseBody
-	jsonUnmarshalError := json.Unmarshal(body, &topHeadlinesResponseBody)
+	// Parse Response
+	var articlesResponseBody ArticlesResponseBody
+	jsonUnmarshalError := json.Unmarshal(body, &articlesResponseBody)
 	if jsonUnmarshalError != nil {
 		return nil, jsonUnmarshalError
 	}
-
-	if topHeadlinesResponseBody.Status != "ok" {
-		return []Article{}, errors.New(topHeadlinesResponseBody.Message)
+	// Get Articles
+	if articlesResponseBody.Status != "ok" {
+		return []Article{}, errors.New(articlesResponseBody.Message)
 	}
 
-	return topHeadlinesResponseBody.Articles, nil
+	return articlesResponseBody.Articles, nil
 }

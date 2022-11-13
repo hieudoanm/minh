@@ -7,10 +7,10 @@ build:
 start:
 		./main
 
-send-news:
+send-football:
 		go run scripts/telegram/messages/football/main.go
 
-send-weather:
+send-forex:
 		go run scripts/telegram/messages/forex/main.go
 
 send-news:

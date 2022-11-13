@@ -3,26 +3,11 @@ package fixer
 import (
 	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
+
+	"chatbot-webhook/libs/http"
 )
 
 const BASE_URL = "http://data.fixer.io/api"
-
-func Get(url string) ([]byte, error) {
-	response, httpGetError := http.Get(url)
-	if httpGetError != nil {
-		return nil, httpGetError
-	}
-	defer response.Body.Close()
-
-	body, readBodyError := io.ReadAll(response.Body)
-	if readBodyError != nil {
-		return nil, readBodyError
-	}
-
-	return body, nil
-}
 
 type LatestResponse struct {
 	Success   bool               `json:"success"`
@@ -35,7 +20,7 @@ type LatestResponse struct {
 func GetLatest(accessKey string) (LatestResponse, error) {
 	var url string = fmt.Sprintf("%s/latest?access_key=%s", BASE_URL, accessKey)
 
-	body, getError := Get(url)
+	body, getError := http.Get(url)
 	if getError != nil {
 		return LatestResponse{}, getError
 	}
@@ -57,7 +42,7 @@ type SymbolsResponse struct {
 func GetSymbols(accessKey string) (SymbolsResponse, error) {
 	var url string = fmt.Sprintf("%s/symbols?access_key=%s", BASE_URL, accessKey)
 
-	body, getError := Get(url)
+	body, getError := http.Get(url)
 	if getError != nil {
 		return SymbolsResponse{}, getError
 	}

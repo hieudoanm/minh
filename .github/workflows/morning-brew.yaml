@@ -12,9 +12,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node:
-          - name: Node.js 16
-            version: 16.x
+        go:
+          - name: Golang 18
+            version: 1.18
         os:
           - name: Ubuntu
             version: ubuntu-latest
@@ -23,10 +23,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+      - name: Install Golang
+        uses: actions/setup-go@v3
         with:
-          node-version: ${{ matrix.node.version }}
+          go-version: ${{ matrix.go.version }}
       - name: TimeZone
         uses: szenius/set-timezone@v1.0
         with:
@@ -36,17 +36,15 @@ jobs:
         run: |
           echo $(date +'%Y-%m-%dT%H:%M:%S')
       - name: Install Dependencies
-        run: yarn install --network-timeout 86400000
-        working-directory: ${{ matrix.project.working-directory }}
-        env:
-          NODE_TOKEN: ${{ secrets.NODE_TOKEN }}
+        working-directory: ./serverless/webhook
+        run: go get ./...
       - name: Run Job
         working-directory: ./serverless/webhook
         run: |
-          yarn job:message:forex
-          yarn job:message:liverpool
-          yarn job:message:news
-          yarn job:message:weather
+          make send-football
+          make send-forex
+          make send-news
+          make send-weather
         env:
           API_KEY_AIR_VISUAL: ${{ secrets.API_KEY_AIR_VISUAL }}
           API_KEY_FIXER: ${{ secrets.API_KEY_FIXER }}
@@ -55,4 +53,4 @@ jobs:
           API_KEY_OPEN_WEATHER_MAP: ${{ secrets.API_KEY_OPEN_WEATHER_MAP }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          NODE_TOKEN: ${{ secrets.NODE_TOKEN }}
+          go-_TOKEN: ${{ secrets.go-_TOKEN }}

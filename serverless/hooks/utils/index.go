@@ -12,3 +12,13 @@ func Getenv(key string, defaultValue string) string {
 	}
 	return value
 }
+
+func Contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
