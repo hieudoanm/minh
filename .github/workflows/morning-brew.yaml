@@ -28,7 +28,7 @@ jobs:
         with:
           go-version: ${{ matrix.go.version }}
       - name: TimeZone
-        uses: szenius/set-timezone@v1.0
+        uses: szenius/set-timezone@v1.1
         with:
           timezoneLinux: 'Asia/Ho_Chi_Minh'
       - name: Get Date & Time
