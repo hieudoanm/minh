@@ -30,7 +30,7 @@
     "lodash": "4.17.21",
     "minimist": "1.2.7",
     "glob-parent": "6.0.2",
-    "got": "12.5.2"
+    "got": "12.5.3"
   },
   "workspaces": [
     "serverless/*",
