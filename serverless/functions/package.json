@@ -1,0 +1,20 @@
+{
+  "name": "@chatbot/functions",
+  "version": "0.0.1",
+  "description": "Functions",
+  "main": "main.go",
+  "repository": "git@github.com:hieudoanm/chatbot.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "./dist/main",
+    "build": "go build -o ./dist/main",
+    "dev": "nodemon --exec go run main.go --signal SIGTERM",
+    "docs": "docsify init public"
+  },
+  "devDependencies": {
+    "docsify-cli": "4.4.4",
+    "nodemon": "2.0.20"
+  }
+}

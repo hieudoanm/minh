@@ -1,0 +1,39 @@
+{
+  "name": "chatbot",
+  "version": "0.0.1",
+  "description": "Chatbot",
+  "main": "dist/index.js",
+  "repository": "git@github.com:hieudoanm/chatbot.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">= 14",
+    "npm": ">= 8",
+    "yarn": "1"
+  },
+  "scripts": {
+    "build:visualiser": "yarn workspace @chatbot/visualiser build",
+    "dev:visualiser": "yarn workspace @chatbot/visualiser dev",
+    "lint:visualiser": "yarn workspace @chatbot/visualiser lint",
+    "start:visualiser": "yarn workspace @chatbot/visualiser start",
+    "test:visualiser": "yarn workspace @chatbot/visualiser test"
+  },
+  "devDependencies": {
+    "husky": "8.0.2",
+    "prettier": "2.7.1",
+    "pretty-quick": "3.1.3"
+  },
+  "resolutions": {
+    "ejs": "3.1.8",
+    "handlebars": "4.7.7",
+    "lodash": "4.17.21",
+    "minimist": "1.2.7",
+    "glob-parent": "6.0.2",
+    "got": "12.5.2"
+  },
+  "workspaces": [
+    "serverless/*",
+    "web/*"
+  ]
+}

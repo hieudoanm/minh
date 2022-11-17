@@ -1,0 +1,25 @@
+{
+  "name": "@chatbot/hooks",
+  "version": "0.0.1",
+  "description": "Hooks",
+  "main": "main.go",
+  "repository": "git@github.com:hieudoanm/chatbot.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "./dist/main",
+    "build": "go build -o ./dist/main",
+    "dev": "nodemon --exec go run main.go --signal SIGTERM",
+    "ngrok": "ngrok http 8080",
+    "docs": "docsify init public",
+    "telegram:football": "go run scripts/telegram/messages/football/main.go",
+    "telegram:forex": "go run scripts/telegram/messages/forex/main.go",
+    "telegram:news": "go run scripts/telegram/messages/news/main.go",
+    "telegram:weather": "go run scripts/telegram/messages/weather/main.go"
+  },
+  "devDependencies": {
+    "docsify-cli": "4.4.4",
+    "nodemon": "2.0.20"
+  }
+}

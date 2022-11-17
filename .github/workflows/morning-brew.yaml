@@ -1,0 +1,56 @@
+name: Morning Brew
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  github-actions:
+    strategy:
+      fail-fast: false
+      matrix:
+        go:
+          - name: Golang 18
+            version: 1.18
+        os:
+          - name: Ubuntu
+            version: ubuntu-latest
+    name: ${{ matrix.os.name }} - ${{ matrix.node.name }}
+    runs-on: ${{ matrix.os.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Golang
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go.version }}
+      - name: TimeZone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Ho_Chi_Minh'
+      - name: Get Date & Time
+        id: datetime
+        run: |
+          echo $(date +'%Y-%m-%dT%H:%M:%S')
+      - name: Install Dependencies
+        working-directory: ./serverless/hooks
+        run: go get
+      - name: Run Job
+        working-directory: ./serverless/hooks
+        run: |
+          make send-football
+          make send-forex
+          make send-news
+          make send-weather
+        env:
+          API_KEY_AIR_VISUAL: ${{ secrets.API_KEY_AIR_VISUAL }}
+          API_KEY_FIXER: ${{ secrets.API_KEY_FIXER }}
+          API_KEY_FOOTBALL_DATA: ${{ secrets.API_KEY_FOOTBALL_DATA }}
+          API_KEY_NEWS: ${{ secrets.API_KEY_NEWS }}
+          API_KEY_OPEN_WEATHER_MAP: ${{ secrets.API_KEY_OPEN_WEATHER_MAP }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          go-_TOKEN: ${{ secrets.go-_TOKEN }}
