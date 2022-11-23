@@ -13,12 +13,12 @@ jobs:
       fail-fast: false
       matrix:
         go:
-          - name: Golang 18
+          - name: Golang 1.18
             version: 1.18
         os:
           - name: Ubuntu
             version: ubuntu-latest
-    name: ${{ matrix.os.name }} - ${{ matrix.node.name }}
+    name: ${{ matrix.os.name }} - ${{ matrix.go.name }}
     runs-on: ${{ matrix.os.version }}
     steps:
       - name: Checkout
