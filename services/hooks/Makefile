@@ -13,14 +13,14 @@ docs:
 ngrok:
     ngrok http 8080
 
-telegram-football:
+send-football:
     go run scripts/telegram/messages/football/main.go
 
-telegram-forex:
+send-forex:
     go run scripts/telegram/messages/forex/main.go
 
-telegram-news:
+send-news:
     go run scripts/telegram/messages/news/main.go
 
-telegram-weather:
+send-weather:
     go run scripts/telegram/messages/weather/main.go

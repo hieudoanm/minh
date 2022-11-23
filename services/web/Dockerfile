@@ -2,6 +2,8 @@ FROM node AS build
 
 LABEL author hieudoanm
 
+ARG node_token
+ENV NODE_TOKEN=$node_token
 ENV PORT=3000
 
 RUN mkdir /home/node/app
