@@ -13,11 +13,11 @@
     "yarn": "1"
   },
   "scripts": {
-    "build:visualiser": "yarn workspace @chatbot/visualiser build",
-    "dev:visualiser": "yarn workspace @chatbot/visualiser dev",
-    "lint:visualiser": "yarn workspace @chatbot/visualiser lint",
-    "start:visualiser": "yarn workspace @chatbot/visualiser start",
-    "test:visualiser": "yarn workspace @chatbot/visualiser test"
+    "build:visualiser": "yarn workspace @chatbot/web build",
+    "dev:visualiser": "yarn workspace @chatbot/web dev",
+    "lint:visualiser": "yarn workspace @chatbot/web lint",
+    "start:visualiser": "yarn workspace @chatbot/web start",
+    "test:visualiser": "yarn workspace @chatbot/web test"
   },
   "devDependencies": {
     "docsify-cli": "4.4.4",
@@ -34,7 +34,6 @@
     "glob-parent": "6.0.2"
   },
   "workspaces": [
-    "serverless/*",
-    "web/*"
+    "services/*"
   ]
 }
