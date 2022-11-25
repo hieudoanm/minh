@@ -7,6 +7,7 @@ import (
 
 	crypto_controller "chatbot-functions/src/controller/crypto"
 	forex_controller "chatbot-functions/src/controller/forex"
+	google_controller "chatbot-functions/src/controller/google"
 	health_controller "chatbot-functions/src/controller/health"
 	status_controller "chatbot-functions/src/controller/status"
 	vnindex_controller "chatbot-functions/src/controller/vnindex"
@@ -22,6 +23,7 @@ func main() {
 	router.GET("/crypto/coins", crypto_controller.GetCryptoCoins)
 	router.GET("/crypto/coins/:id", crypto_controller.GetCryptoCoin)
 	router.GET("/forex/rates", forex_controller.GetForexRates)
+	router.GET("/google/trends", google_controller.GetGoogleTrends)
 	router.GET("/health", health_controller.GetHealth)
 	router.GET("/status", status_controller.GetStatuses)
 	router.GET("/status/:service", status_controller.GetStatus)
