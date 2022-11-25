@@ -1,4 +1,4 @@
-package forex
+package forex_client
 
 import (
 	"encoding/json"
@@ -8,8 +8,6 @@ import (
 	"net/http"
 
 	"chatbot-functions/src/utils"
-
-	"github.com/julienschmidt/httprouter"
 )
 
 var API_KEY_FIXER string = utils.Getenv("API_KEY_FIXER", "")
@@ -22,8 +20,7 @@ type RatesResponseBody struct {
 	Rates     map[string]float64 `json:"rates"`
 }
 
-func GetForexRates(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
+func GetForexRates() RatesResponseBody {
 	// HTTP Request
 	var url string = fmt.Sprintf(
 		"http://data.fixer.io/api/latest?access_key=%s",
@@ -46,5 +43,5 @@ func GetForexRates(writer http.ResponseWriter, request *http.Request, _ httprout
 		log.Println("Fail to GetForexRates", jsonUnmarshalError)
 	}
 
-	json.NewEncoder(writer).Encode(ratesResponseBody)
+	return ratesResponseBody
 }

@@ -1,4 +1,4 @@
-package vnindex
+package vnindex_client
 
 import (
 	"encoding/json"
@@ -7,8 +7,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-
-	"github.com/julienschmidt/httprouter"
 )
 
 const TABLEBASE_URL = "https://raw.githubusercontent.com/hieudoanm/tablebase/master/json"
@@ -26,8 +24,7 @@ type CompaniesResponseBody struct {
 	Name        string `json:"name"`
 }
 
-func GetVnindexCompanies(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
+func GetVnindexCompanies() []CompaniesResponseBody {
 	// HTTP Request
 	var url string = fmt.Sprintf(
 		"%s/vietnam/stock/companies.json",
@@ -50,7 +47,7 @@ func GetVnindexCompanies(writer http.ResponseWriter, request *http.Request, _ ht
 		log.Println("Fail to GetVnindexCompanies", jsonUnmarshalError)
 	}
 
-	json.NewEncoder(writer).Encode(companiesResponseBody)
+	return companiesResponseBody
 }
 
 type HistoryResponseBody struct {
@@ -64,9 +61,7 @@ type HistoryResponseBody struct {
 	Timestamp string `json:"timestamp"`
 }
 
-func GetVnindexHistory(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var symbol string = params.ByName("symbol")
+func GetVnindexHistory(symbol string) []HistoryResponseBody {
 	// HTTP Request
 	var url string = fmt.Sprintf(
 		"%s/vietnam/stock/history/%s.json",
@@ -84,11 +79,11 @@ func GetVnindexHistory(writer http.ResponseWriter, request *http.Request, params
 		log.Println("Fail to GetVnindexHistory", readBodyError)
 	}
 	// Parse JSON
-	var companiesResponseBody []HistoryResponseBody
-	jsonUnmarshalError := json.Unmarshal(body, &companiesResponseBody)
+	var historyResponseBody []HistoryResponseBody
+	jsonUnmarshalError := json.Unmarshal(body, &historyResponseBody)
 	if jsonUnmarshalError != nil {
 		log.Println("Fail to GetVnindexHistory", jsonUnmarshalError)
 	}
 
-	json.NewEncoder(writer).Encode(companiesResponseBody)
+	return historyResponseBody
 }

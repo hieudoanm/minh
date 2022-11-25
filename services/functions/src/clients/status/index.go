@@ -1,4 +1,4 @@
-package status
+package status_client
 
 import (
 	"encoding/json"
@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/julienschmidt/httprouter"
 	"golang.org/x/exp/slices"
 )
 
@@ -69,22 +68,6 @@ type StatusResponseBody struct {
 type ServiceStatus struct {
 	Name   string `json:"name"`
 	Status bool   `json:"status"`
-}
-
-func GetStatuses(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var serviceStatuses map[string]ServiceStatus = map[string]ServiceStatus{}
-	for _, service := range SERVICES {
-		serviceStatuses[service] = GetStatusByService(service)
-	}
-	json.NewEncoder(writer).Encode(serviceStatuses)
-}
-
-func GetStatus(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var service string = params.ByName("service")
-	var serviceStatus ServiceStatus = GetStatusByService(service)
-	json.NewEncoder(writer).Encode(serviceStatus)
 }
 
 func GetStatusByService(service string) ServiceStatus {

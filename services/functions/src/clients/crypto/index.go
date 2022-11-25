@@ -1,15 +1,13 @@
-package crypto
+package crypto_client
 
 import (
-	"chatbot-functions/src/utils"
 	"encoding/json"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
-
-	"github.com/julienschmidt/httprouter"
 )
 
 type CoinsResponseBody struct {
@@ -44,7 +42,7 @@ type CoinsResponseBody struct {
 	} `json:"data"`
 }
 
-var OrderBy map[string]string = map[string]string{
+var ORDER_BY map[string]string = map[string]string{
 	"VOLUME_24H": "24hVolume",
 	"CHANGE":     "change",
 	"LISTED_AT":  "listedAt",
@@ -52,12 +50,12 @@ var OrderBy map[string]string = map[string]string{
 	"PRICE":      "price",
 }
 
-var OrderDirection map[string]string = map[string]string{
+var ORDER_DIRECTION map[string]string = map[string]string{
 	"ASC":  "asc",
 	"DESC": "desc",
 }
 
-var TimePeriod map[string]string = map[string]string{
+var TIME_PERIOD map[string]string = map[string]string{
 	"1h":  "1h",
 	"3h":  "3h",
 	"12h": "12h",
@@ -70,37 +68,38 @@ var TimePeriod map[string]string = map[string]string{
 	"5y":  "5y",
 }
 
-func GetCryptoCoins(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	// Query Parameters
-	limit := utils.GetQueryParameter(request, "limit", "100")
-	offset := utils.GetQueryParameter(request, "offset", "0")
-	orderBy := utils.GetQueryParameter(request, "orderBy", OrderBy["MARKET_CAP"])
-	orderDirection := utils.GetQueryParameter(request, "orderDirection", OrderDirection["DESC"])
-	timePeriod := utils.GetQueryParameter(request, "timePeriod", TimePeriod["24h"])
-	tier := utils.GetQueryParameter(request, "tier", "")
-	tag := utils.GetQueryParameter(request, "tag", "")
+type CoinsRequest struct {
+	Limit          int    `json:"limit"`
+	Offset         int    `json:"offset"`
+	OrderBy        string `json:"orderBy"`
+	OrderDirection string `json:"orderDirection"`
+	TimePeriod     string `json:"timePeriod"`
+	Tier           string `json:"tier"`
+	Tag            string `json:"tag"`
+}
+
+func GetCryptoCoins(coinsRequest CoinsRequest) CoinsResponseBody {
 	var queryParameters = []string{}
-	if limit != "" {
-		queryParameters = append(queryParameters, "limit="+limit)
+	if coinsRequest.Limit != 0 {
+		queryParameters = append(queryParameters, "limit="+strconv.Itoa(coinsRequest.Limit))
 	}
-	if offset != "" {
-		queryParameters = append(queryParameters, "offset="+offset)
+	if coinsRequest.Offset != 0 {
+		queryParameters = append(queryParameters, "offset="+strconv.Itoa(coinsRequest.Offset))
 	}
-	if orderBy != "" {
-		queryParameters = append(queryParameters, "orderBy="+orderBy)
+	if coinsRequest.OrderBy != "" {
+		queryParameters = append(queryParameters, "orderBy="+coinsRequest.OrderBy)
 	}
-	if orderDirection != "" {
-		queryParameters = append(queryParameters, "orderDirection="+orderDirection)
+	if coinsRequest.OrderDirection != "" {
+		queryParameters = append(queryParameters, "orderDirection="+coinsRequest.OrderDirection)
 	}
-	if timePeriod != "" {
-		queryParameters = append(queryParameters, "timePeriod="+timePeriod)
+	if coinsRequest.TimePeriod != "" {
+		queryParameters = append(queryParameters, "timePeriod="+coinsRequest.TimePeriod)
 	}
-	if tier != "" {
-		queryParameters = append(queryParameters, "tier="+tier)
+	if coinsRequest.Tier != "" {
+		queryParameters = append(queryParameters, "tier="+coinsRequest.Tier)
 	}
-	if tag != "" {
-		queryParameters = append(queryParameters, "tags="+tag)
+	if coinsRequest.Tag != "" {
+		queryParameters = append(queryParameters, "tags="+coinsRequest.Tag)
 	}
 	// HTTP Request
 	var url string = fmt.Sprintf(
@@ -125,7 +124,7 @@ func GetCryptoCoins(writer http.ResponseWriter, request *http.Request, _ httprou
 		log.Println("Fail to GetCryptoCoins")
 	}
 
-	json.NewEncoder(writer).Encode(coinsResponseBody)
+	return coinsResponseBody
 }
 
 type CoinResponseBody struct {
@@ -175,9 +174,7 @@ type CoinResponseBody struct {
 	} `json:"data"`
 }
 
-func GetCryptoCoin(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
-	var id string = params.ByName("id")
+func GetCryptoCoin(id string) CoinResponseBody {
 	// HTTP Request
 	var url string = fmt.Sprintf(
 		"https://api.coinranking.com/v2/coin/%s",
@@ -201,5 +198,5 @@ func GetCryptoCoin(writer http.ResponseWriter, request *http.Request, params htt
 		log.Println("Fail to GetCryptoCoin")
 	}
 
-	json.NewEncoder(writer).Encode(coinResponseBody)
+	return coinResponseBody
 }
