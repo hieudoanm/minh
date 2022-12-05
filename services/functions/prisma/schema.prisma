@@ -1,0 +1,136 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+model President {
+  id        String   @id
+  name      String
+  startDate DateTime
+  endDate   DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Minister {
+  id         String   @id
+  name       String
+  startDate  DateTime
+  endDate    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  ministry   Ministry @relation(fields: [ministryId], references: [id])
+  ministryId String
+}
+
+model Ministry {
+  id        String       @id
+  name      MinistryName
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  Minister  Minister[]
+}
+
+model Province {
+  id        String     @id
+  name      String
+  region    String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  District  District[]
+  Member    Member[]
+}
+
+model District {
+  id         String   @id
+  name       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  province   Province @relation(fields: [provinceId], references: [id])
+  provinceId String
+  Ward       Ward[]
+}
+
+model Ward {
+  id         String   @id
+  name       String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  district   District @relation(fields: [districtId], references: [id])
+  districtId String
+}
+
+model Member {
+  id          String    @id
+  name        String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  province    Province  @relation(fields: [provinceId], references: [id])
+  provinceId  String
+  committee   Committee @relation(fields: [committeeId], references: [id])
+  committeeId String
+}
+
+model Committee {
+  id           String         @id
+  name         CommitteeName
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  Member       Member[]
+  Subcommittee Subcommittee[]
+}
+
+model Subcommittee {
+  id          String           @id
+  name        SubcommitteeName
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  committee   Committee        @relation(fields: [committeeId], references: [id])
+  committeeId String
+}
+
+enum MinistryName {
+  // Ministry
+  FOREIGN
+  DEFENCE
+  SECURITY
+  HOME
+  JUSTICE
+  FINANCE
+  INDUSTRY_TRADE
+  PLANNING_INVESTMENT
+  AGRICULTURE_RURAL_DEVELOPMENT
+  CONSTRUCTION
+  TRANSPORT
+  EDUCATION_TRAINING
+  SCIENCE_TECHNOLOGY
+  NATURAL_RESOURCES_ENVIRONMENT
+  INFORMATION_COMMUNICATIONS
+  HEALTH
+  LABOUR_INVALIDS_SOCIAL
+  CULTURE_SPORTS_TOURISM
+  // Ministry-level Agency
+  GOVERNMENT_OFFICE
+  GOVERNMENT_INSPECTORATE
+  STATE_BANK
+  ETHNIC_MINORITY
+}
+
+enum CommitteeName {
+  STANDING
+  LAWS
+  JUSTICE
+  ECONOMY
+  FINANCE_BUDGET
+  DEFENSE_SECURITY
+  CULTURE_EDUCATION
+  SOCIAL_AFFAIRS
+  SCIENCE_TECHNOLOGY_ENVIRONMENT
+  EXTERNAL_AFFAIRS
+}
+
+enum SubcommitteeName {
+  PEOPLE_ASPIRATION
+  DELEGATE_AFFAIRS
+  LEGISLATION_RESEARCH
+}
