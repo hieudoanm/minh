@@ -2,10 +2,10 @@ package presidents_controller
 
 import (
 	"chatbot-functions/src/constants"
+	presidents_service "chatbot-functions/src/services/vietnam/government/presidents"
+
 	"encoding/json"
 	"net/http"
-
-	presidents_service "chatbot-functions/src/services/government/presidents"
 
 	"github.com/julienschmidt/httprouter"
 )

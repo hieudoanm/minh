@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	committees_service "chatbot-functions/src/services/national-assembly/committees"
+	committees_service "chatbot-functions/src/services/vietnam/national-assembly/committees"
 
 	"github.com/julienschmidt/httprouter"
 )

@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"chatbot-functions/src/constants"
-	wards_service "chatbot-functions/src/services/maps/wards"
+	wards_service "chatbot-functions/src/services/vietnam/maps/wards"
 
 	"github.com/julienschmidt/httprouter"
 )

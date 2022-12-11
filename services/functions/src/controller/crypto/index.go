@@ -2,7 +2,9 @@ package crypto_controller
 
 import (
 	crypto_client "chatbot-functions/src/clients/crypto"
+	"chatbot-functions/src/constants"
 	"chatbot-functions/src/utils"
+
 	"fmt"
 	"strconv"
 
@@ -13,7 +15,7 @@ import (
 )
 
 func GetCryptoCoins(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
+	writer.Header().Set("Content-Type", constants.CONTENT_TYPE_APPLICATION_JSON)
 	// Query Parameters
 	limit, limitError := strconv.Atoi(utils.GetQueryParameter(request, "limit", "100"))
 	if limitError != nil {
@@ -43,7 +45,7 @@ func GetCryptoCoins(writer http.ResponseWriter, request *http.Request, _ httprou
 }
 
 func GetCryptoCoin(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	writer.Header().Set("Content-Type", "application/json")
+	writer.Header().Set("Content-Type", constants.CONTENT_TYPE_APPLICATION_JSON)
 	var id string = params.ByName("id")
 	// Service
 	var coinResponseBody crypto_client.CoinResponseBody = crypto_client.GetCryptoCoin(id)

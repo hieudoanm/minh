@@ -2,10 +2,10 @@ package ministries_controller
 
 import (
 	"chatbot-functions/src/constants"
+	ministries_service "chatbot-functions/src/services/vietnam/government/ministries"
+
 	"encoding/json"
 	"net/http"
-
-	ministries_service "chatbot-functions/src/services/government/ministries"
 
 	"github.com/julienschmidt/httprouter"
 )
