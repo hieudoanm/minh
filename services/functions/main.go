@@ -26,6 +26,7 @@ import (
 	forex_router "chatbot-functions/src/router/forex"
 	google_router "chatbot-functions/src/router/google"
 	health_router "chatbot-functions/src/router/health"
+	proxy_router "chatbot-functions/src/router/proxy"
 	status_router "chatbot-functions/src/router/status"
 	vietnam_router "chatbot-functions/src/router/vietnam"
 
@@ -44,6 +45,8 @@ func main() {
 	google_router.GoogleRouter(router)
 	// Health
 	health_router.HealthRouter(router)
+	// Proxy
+	proxy_router.ProxyRouter(router)
 	// Status
 	status_router.StatusRouter(router)
 	// Vietnam

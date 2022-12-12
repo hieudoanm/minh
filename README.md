@@ -1,1 +1,6 @@
-# Chatbot
+# MINH
+
+- Core
+- Functions
+- Hooks
+- Web

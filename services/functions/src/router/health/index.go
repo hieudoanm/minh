@@ -8,5 +8,4 @@ import (
 
 func HealthRouter(router *httprouter.Router) {
 	router.GET("/health", health_controller.GetHealth)
-
 }
