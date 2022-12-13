@@ -22,15 +22,15 @@ import (
 	"log"
 	"net/http"
 
-	crypto_router "chatbot-functions/src/router/crypto"
-	forex_router "chatbot-functions/src/router/forex"
-	google_router "chatbot-functions/src/router/google"
-	health_router "chatbot-functions/src/router/health"
-	proxy_router "chatbot-functions/src/router/proxy"
-	status_router "chatbot-functions/src/router/status"
-	vietnam_router "chatbot-functions/src/router/vietnam"
+	crypto_router "chatbot-functions/src/modules/crypto/router"
+	forex_router "chatbot-functions/src/modules/forex/router"
+	google_router "chatbot-functions/src/modules/google/router"
+	health_router "chatbot-functions/src/modules/health/router"
+	proxy_router "chatbot-functions/src/modules/proxy/router"
+	status_router "chatbot-functions/src/modules/status/router"
+	vietnam_router "chatbot-functions/src/modules/vietnam/router"
 
-	"chatbot-functions/src/utils"
+	"chatbot-functions/src/common/utils"
 
 	"github.com/julienschmidt/httprouter"
 )
