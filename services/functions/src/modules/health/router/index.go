@@ -6,6 +6,6 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func HealthRouter(router *httprouter.Router) {
+func Router(router *httprouter.Router) {
 	router.GET("/health", health_controller.GetHealth)
 }
