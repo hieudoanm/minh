@@ -9,7 +9,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func VietnamRouter(router *httprouter.Router) {
+func Router(router *httprouter.Router) {
 	vietnam_government_router.VietnamGovernmentRouter(router)              // Government
 	vietnam_maps_router.VietnamMapsRouter(router)                          // Maps
 	vietnam_national_assembly_router.VietnamNationalAssemblyRouter(router) // National Assembly

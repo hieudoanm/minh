@@ -6,7 +6,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func StatusRouter(router *httprouter.Router) {
+func Router(router *httprouter.Router) {
 	router.GET("/status", status_controller.GetStatuses)
 	router.GET("/status/:service", status_controller.GetStatus)
 }

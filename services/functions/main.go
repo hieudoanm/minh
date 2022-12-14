@@ -22,9 +22,10 @@ import (
 	"log"
 	"net/http"
 
-	crypto_router "chatbot-functions/src/modules/crypto/router"
-	forex_router "chatbot-functions/src/modules/forex/router"
-	google_router "chatbot-functions/src/modules/google/router"
+	crypto_router "chatbot-functions/src/modules/currencies/crypto/router"
+	forex_router "chatbot-functions/src/modules/currencies/forex/router"
+	trends_router "chatbot-functions/src/modules/google/trends/router"
+	youtube_router "chatbot-functions/src/modules/google/youtube/router"
 	health_router "chatbot-functions/src/modules/health/router"
 	proxy_router "chatbot-functions/src/modules/proxy/router"
 	status_router "chatbot-functions/src/modules/status/router"
@@ -37,20 +38,15 @@ import (
 
 func main() {
 	var router *httprouter.Router = httprouter.New()
-	// Crypto
-	crypto_router.CryptoRouter(router)
-	// Forex
-	forex_router.ForexRouter(router)
-	// Google
-	google_router.GoogleRouter(router)
-	// Health
-	health_router.HealthRouter(router)
-	// Proxy
-	proxy_router.ProxyRouter(router)
-	// Status
-	status_router.StatusRouter(router)
-	// Vietnam
-	vietnam_router.VietnamRouter(router)
+	// Router
+	crypto_router.Router(router)  // Crypto
+	forex_router.Router(router)   // Forex
+	trends_router.Router(router)  // Google - Trends
+	youtube_router.Router(router) // Google - YouTube
+	health_router.Router(router)  // Health
+	proxy_router.Router(router)   // Proxy
+	status_router.Router(router)  // Status
+	vietnam_router.Router(router) // Vietnam
 	// Start
 	var PORT string = utils.Getenv("PORT", "8080")
 	log.Printf("🚀 Server is listening on port %s", PORT)

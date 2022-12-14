@@ -6,6 +6,6 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func ProxyRouter(router *httprouter.Router) {
+func Router(router *httprouter.Router) {
 	router.GET("/proxy", proxy_controller.Proxy)
 }
