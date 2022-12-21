@@ -1,4 +1,4 @@
-import { useWindowSize } from '@hieudoanm/use-window-size';
+import { useWindowSize } from '@hieudoanm/hooks';
 import {
   geoMercator,
   geoPath,

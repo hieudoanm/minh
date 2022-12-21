@@ -8,6 +8,9 @@ on:
       - hotfix/**
       - feature/**
       - renovate/**
+    paths:
+      - .github/workflows/ci-nodejs.yaml
+      - services/web/**
 
 jobs:
   github-actions:

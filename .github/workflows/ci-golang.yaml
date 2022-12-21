@@ -8,6 +8,10 @@ on:
       - hotfix/**
       - feature/**
       - renovate/**
+    paths:
+      - .github/workflows/ci-golang.yaml
+      - services/functions/**
+      - services/hooks/**
 
 jobs:
   github-actions:

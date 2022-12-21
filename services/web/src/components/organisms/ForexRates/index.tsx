@@ -1,4 +1,4 @@
-import { useAxios } from '@hieudoanm/use-axios';
+import { useAxios } from '@hieudoanm';
 import CircularProgress from '@mui/material/CircularProgress';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';

@@ -5,6 +5,11 @@ on:
     branches:
       - master
       - develop
+    paths:
+      - .github/workflows/docker.yaml
+      - services/functions/**
+      - services/hooks/**
+      - services/web/**
 
 jobs:
   github-actions:
