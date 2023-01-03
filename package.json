@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "docsify-cli": "4.4.4",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "nodemon": "2.0.20",
     "prettier": "2.8.1",
     "pretty-quick": "3.1.3"
