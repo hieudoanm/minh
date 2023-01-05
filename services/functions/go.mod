@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/julienschmidt/httprouter v1.3.0
-	golang.org/x/exp v0.0.0-20221230185412-738e83a70c30
+	golang.org/x/exp v0.0.0-20230105000112-eab7a2c85304
 	gorm.io/driver/postgres v1.4.6
 	gorm.io/gorm v1.24.3
 )
